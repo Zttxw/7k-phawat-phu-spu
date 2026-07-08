@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera 7K Phaway Phu´spu | San Jerónimo 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        race: {
+                            yellow: '#FFD700',
+                            'yellow-dark': '#E6C200',
+                            blue: '#1E40AF',
+                            'blue-light': '#3B82F6',
+                            'blue-dark': '#1E3A8A',
+                            green: '#16A34A',
+                            'green-dark': '#15803D',
+                            red: '#DC2626',
+                            dark: '#0F172A',
+                            'dark-light': '#1E293B',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'marquee': 'marquee 30s linear infinite',
+                        'count': 'count 2s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #0F172A; color: #fff; }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 40%, #1E40AF 60%, #0F172A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,215,0,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(59,130,246,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(22,163,74,0.06) 0%, transparent 50%);
+            animation: float 15s ease-in-out infinite;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, #0F172A, transparent);
+        }
+
+        .section-dark { background: #0F172A; }
+        .section-darker { background: #0a1020; }
+        .section-blue { background: linear-gradient(135deg, #1E3A8A, #1E40AF); }
+
+        .glass-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.5rem;
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,215,0,0.3);
+            transform: translateY(-4px);
+        }
+
+        .gold-border {
+            border: 2px solid rgba(255,215,0,0.4);
+            border-radius: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-blue {
+            background: linear-gradient(135deg, #60A5FA, #3B82F6, #1D4ED8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #0F172A;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255,215,0,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #FFD700;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 50px;
+            border: 2px solid #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,215,0,0.1);
+            transform: scale(1.05);
+        }
+
+        .countdown-box {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 1rem;
+            padding: 16px 20px;
+            min-width: 90px;
+            text-align: center;
+        }
+
+        .route-point {
+            position: relative;
+            padding-left: 40px;
+        }
+        .route-point::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 40px;
+            bottom: -20px;
+            width: 2px;
+            background: linear-gradient(to bottom, #FFD700, rgba(255,215,0,0.2));
+        }
+        .route-point:last-child::before {
+            display: none;
+        }
+        .route-point .dot {
+            position: absolute;
+            left: 4px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #FFD700;
+            border: 3px solid #0F172A;
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+        .route-point.end .dot {
+            background: #DC2626;
+            box-shadow: 0 0 10px rgba(220,38,38,0.5);
+        }
+
+        .category-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 1.5rem;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        .category-card.juvenil::before { background: linear-gradient(to right, #3B82F6, #60A5FA); }
+        .category-card.libre::before { background: linear-gradient(to right, #16A34A, #4ADE80); }
+        .category-card.master::before { background: linear-gradient(to right, #FFD700, #FFA500); }
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 36px;
+            padding-bottom: 32px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255,215,0,0.2);
+        }
+        .timeline-item:last-child::before { display: none; }
+        .timeline-item .tl-dot {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #FFD700;
+            box-shadow: 0 0 8px rgba(255,215,0,0.4);
+        }
+
+        .nav-link {
+            position: relative;
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-link:hover, .nav-link.active { color: #FFD700; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .map-container {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 2px solid rgba(255,215,0,0.3);
+            position: relative;
+        }
+        .map-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255,215,0,0.1);
+            background: rgba(255,255,255,0.08);
+        }
+        .form-input::placeholder { color: rgba(255,255,255,0.35); }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 6px;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-bottom: 20px;
+        }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(22,163,74,0.95);
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 14px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+
+        @media (max-width: 768px) {
+            .countdown-box { min-width: 70px; padding: 12px 14px; }
+            .btn-primary, .btn-secondary { padding: 12px 24px; font-size: 14px; }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0F172A; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,215,0,0.5); }
+    </style>
+</head>
+<body>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+    <iconify-icon icon="lucide:check-circle" width="20"></iconify-icon>
+    <span id="toast-msg">Mensaje enviado</span>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: transparent;">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#hero" class="flex items-center gap-3">
+            <img src="https://z-cdn-media.chatglm.cn/files/4de7f8cc-0ef5-481a-b545-5224a9070287.png?auth_key=1883523179-6743d032e54e446f95d258f8eb375ffc-0-434c736339300851bd0f087a3760631c" alt="Logo Carrera" class="h-12 w-auto">
+        </a>
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8">
+            <a href="#about" class="nav-link">Acerca de</a>
+            <a href="#categorias" class="nav-link">Categorías</a>
+            <a href="#recorrido" class="nav-link">Recorrido</a>
+            <a href="#inscripcion" class="nav-link">Inscripción</a>
+            <a href="#cronograma" class="nav-link">Cronograma</a>
+            <a href="#premiacion" class="nav-link">Premiación</a>
+            <a href="#bases" class="nav-link">Bases</a>
+            <a href="#inscripcion" class="btn-primary" style="padding: 10px 24px; font-size: 13px;">Inscríbete</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden text-white p-2" onclick="toggleMobileMenu()">
+            <iconify-icon icon="lucide:menu" width="28"></iconify-icon>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-race-dark/98 backdrop-blur-xl border-t border-white/10">
+        <div class="px-6 py-6 flex flex-col gap-4">
+            <a href="#about" class="nav-link text-lg" onclick="closeMobileMenu()">Acerca de</a>
+            <a href="#categorias" class="nav-link text-lg" onclick="closeMobileMenu()">Categorías</a>
+            <a href="#recorrido" class="nav-link text-lg" onclick="closeMobileMenu()">Recorrido</a>
+            <a href="#inscripcion" class="nav-link text-lg" onclick="closeMobileMenu()">Inscripción</a>
+            <a href="#cronograma" class="nav-link text-lg" onclick="closeMobileMenu()">Cronograma</a>
+            <a href="#premiacion" class="nav-link text-lg" onclick="closeMobileMenu()">Premiación</a>
+            <a href="#bases" class="nav-link text-lg" onclick="closeMobileMenu()">Bases</a>
+            <a href="#inscripcion" class="btn-primary text-center justify-center mt-2" onclick="closeMobileMenu()">Inscríbete Ahora</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero-bg min-h-screen flex items-center relative pt-20">
+    <div class="max-w-7xl mx-auto px-6 py-20 w-full relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-5 py-2 mb-8">
+                    <iconify-icon icon="lucide:map-pin" width="16" style="color: #FFD700;"></iconify-icon>
+                    <span class="text-sm font-medium text-white/80">San Jerónimo, Cusco - Agosto 2026</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-4">
+                    <span class="gradient-text">CARRERA</span><br>
+                    <span class="text-white text-6xl md:text-7xl lg:text-8xl">7K</span><br>
+                    <span class="text-3xl md:text-4xl lg:text-5xl font-bold" style="color: #60A5FA;">Phaway</span>
+                    <span class="text-3xl md:text-4xl lg:text-5xl font-bold" style="color: #4ADE80;"> Phu´spu</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/60 font-light leading-relaxed mt-6 max-w-lg mx-auto lg:mx-0">
+                    Una experiencia deportiva que resalta el esfuerzo, la perseverancia y el espíritu competitivo en el corazón de San Jerónimo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+                    <a href="#inscripcion" class="btn-primary text-lg">
+                        <iconify-icon icon="lucide:edit-3" width="20"></iconify-icon>
+                        Inscríbete Gratis
+                    </a>
+                    <a href="#recorrido" class="btn-secondary text-lg">
+                        <iconify-icon icon="lucide:map" width="20"></iconify-icon>
+                        Ver Recorrido
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center lg:justify-end">
+                <img src="https://z-cdn-media.chatglm.cn/files/4de7f8cc-0ef5-481a-b545-5224a9070287.png?auth_key=1883523179-6743d032e54e446f95d258f8eb375ffc-0-434c736339300851bd0f087a3760631c" alt="Logo 7K Phaway Phu'spu" class="w-72 md:w-96 animate-float drop-shadow-2xl">
+            </div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="mt-16 text-center">
+            <p class="text-sm font-medium text-white/50 uppercase tracking-widest mb-4">Cuenta Regresiva</p>
+            <div class="flex justify-center gap-4 md:gap-6 flex-wrap">
+                <div class="countdown-box">
+                    <div id="cd-days" class="text-3xl md:text-4xl font-bold gradient-text">--</div>
+                    <div class="text-xs text-white/50 mt-1 uppercase tracking-wider">Días</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="cd-hours" class="text-3xl md:text-4xl font-bold gradient-text">--</div>
+                    <div class="text-xs text-white/50 mt-1 uppercase tracking-wider">Horas</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="cd-mins" class="text-3xl md:text-4xl font-bold gradient-text">--</div>
+                    <div class="text-xs text-white/50 mt-1 uppercase tracking-wider">Minutos</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="cd-secs" class="text-3xl md:text-4xl font-bold gradient-text">--</div>
+                    <div class="text-xs text-white/50 mt-1 uppercase tracking-wider">Segundos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+            <div class="glass-card p-5 text-center">
+                <iconify-icon icon="lucide:route" width="28" style="color: #FFD700;"></iconify-icon>
+                <div class="text-2xl font-bold mt-2">7 KM</div>
+                <div class="text-xs text-white/50 mt-1">Distancia</div>
+            </div>
+            <div class="glass-card p-5 text-center">
+                <iconify-icon icon="lucide:users" width="28" style="color: #60A5FA;"></iconify-icon>
+                <div class="text-2xl font-bold mt-2">6</div>
+                <div class="text-xs text-white/50 mt-1">Categorías</div>
+            </div>
+            <div class="glass-card p-5 text-center">
+                <iconify-icon icon="lucide:trophy" width="28" style="color: #4ADE80;"></iconify-icon>
+                <div class="text-2xl font-bold mt-2">3+</div>
+                <div class="text-xs text-white/50 mt-1">Niveles de Premios</div>
+            </div>
+            <div class="glass-card p-5 text-center">
+                <iconify-icon icon="lucide:ticket" width="28" style="color: #F472B6;"></iconify-icon>
+                <div class="text-2xl font-bold mt-2">GRATIS</div>
+                <div class="text-xs text-white/50 mt-1">Inscripción</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MARQUEE BANNER -->
+<div class="bg-gradient-to-r from-race-yellow via-yellow-400 to-race-yellow py-3 overflow-hidden">
+    <div class="marquee-track">
+        <span class="text-race-dark font-bold text-sm mx-8">🏃 CARRERA 7K PHAWAY PHU´SPU</span>
+        <span class="text-race-dark font-bold text-sm mx-8">📍 SAN JERÓNIMO - CUSCO</span>
+        <span class="text-race-dark font-bold text-sm mx-8">📅 AGOSTO 2026</span>
+        <span class="text-race-dark font-bold text-sm mx-8">🏆 INSCRIPCIÓN GRATUITA</span>
+        <span class="text-race-dark font-bold text-sm mx-8">🥇 PREMIOS ESPECIALES BONUS</span>
+        <span class="text-race-dark font-bold text-sm mx-8">💧 2 ESTACIONES DE HIDRATACIÓN</span>
+        <span class="text-race-dark font-bold text-sm mx-8">🏃 CARRERA 7K PHAWAY PHU´SPU</span>
+        <span class="text-race-dark font-bold text-sm mx-8">📍 SAN JERÓNIMO - CUSCO</span>
+        <span class="text-race-dark font-bold text-sm mx-8">📅 AGOSTO 2026</span>
+        <span class="text-race-dark font-bold text-sm mx-8">🏆 INSCRIPCIÓN GRATUITA</span>
+        <span class="text-race-dark font-bold text-sm mx-8">🥇 PREMIOS ESPECIALES BONUS</span>
+        <span class="text-race-dark font-bold text-sm mx-8">💧 2 ESTACIONES DE HIDRATACIÓN</span>
+    </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="section-dark py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Sobre el Evento</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Acerca de la <span class="gradient-text">Carrera 7K</span></h2>
+            <p class="text-white/50 mt-4 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                La Municipalidad Distrital de San Jerónimo organiza esta competencia para promover el deporte, la recreación y los hábitos de vida saludable.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass-card p-8 scroll-reveal">
+                <div class="w-14 h-14 rounded-2xl bg-race-yellow/10 flex items-center justify-center mb-6">
+                    <iconify-icon icon="lucide:target" width="28" style="color: #FFD700;"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Finalidad</h3>
+                <p class="text-white/60 font-light leading-relaxed">
+                    Promover el deporte, la recreación y los hábitos de vida saludable en la población. La competencia busca incentivar la práctica del atletismo y la participación activa de jóvenes y adultos, fortaleciendo los valores de integración, compañerismo y sana competencia a través de un recorrido de aproximadamente 7 kilómetros por las principales vías del distrito.
+                </p>
+            </div>
+            <div class="glass-card p-8 scroll-reveal">
+                <div class="w-14 h-14 rounded-2xl bg-race-blue-light/10 flex items-center justify-center mb-6">
+                    <iconify-icon icon="lucide:building-2" width="28" style="color: #60A5FA;"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Organización</h3>
+                <p class="text-white/60 font-light leading-relaxed">
+                    La organización, planificación y ejecución estará a cargo de la <strong class="text-white/90">Municipalidad Distrital de San Jerónimo</strong>, a través de la <strong class="text-white/90">Gerencia de Desarrollo Social</strong>, en coordinación con las unidades orgánicas competentes para la organización técnica, logística, seguridad y atención médica.
+                </p>
+            </div>
+        </div>
+
+        <!-- Objectives Grid -->
+        <div class="scroll-reveal">
+            <h3 class="text-2xl font-bold text-center mb-10">Objetivos</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="flex gap-4 items-start p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-race-yellow/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-race-yellow/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <iconify-icon icon="lucide:medal" width="20" style="color: #FFD700;"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Incentivar la participación de niños, jóvenes y adultos fortaleciendo el espíritu de superación.</p>
+                </div>
+                <div class="flex gap-4 items-start p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-race-blue-light/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-race-blue-light/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <iconify-icon icon="lucide:heart-pulse" width="20" style="color: #60A5FA;"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Promover la práctica del atletismo como medio para un estilo de vida saludable.</p>
+                </div>
+                <div class="flex gap-4 items-start p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-race-green/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-race-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <iconify-icon icon="lucide:handshake" width="20" style="color: #4ADE80;"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Fomentar valores como el respeto, disciplina, responsabilidad y compañerismo.</p>
+                </div>
+                <div class="flex gap-4 items-start p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-pink-400/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-pink-400/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <iconify-icon icon="lucide:users" width="20" style="color: #F472B6;"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Fortalecer los lazos de integración y confraternidad mediante actividades deportivas.</p>
+                </div>
+                <div class="flex gap-4 items-start p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-orange-400/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-orange-400/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <iconify-icon icon="lucide:trending-up" width="20" style="color: #FB923C;"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Difundir el deporte como herramienta para el desarrollo integral de la comunidad.</p>
+                </div>
+                <div class="flex gap-4 items-start p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-cyan-400/20 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-400/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <iconify-icon icon="lucide:shield-check" width="20" style="color: #22D3EE;"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Garantizar una competencia organizada, segura y transparente para todos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES SECTION -->
+<section id="categorias" class="section-darker py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Compite</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Categorías de <span class="gradient-text">Competencia</span></h2>
+            <p class="text-white/50 mt-4 max-w-xl mx-auto">Personas de ambos sexos, debidamente inscritas en la categoría que les corresponda según su edad.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 scroll-reveal">
+            <!-- Juvenil -->
+            <div class="category-card juvenil">
+                <div class="w-16 h-16 rounded-full bg-race-blue-light/10 flex items-center justify-center mx-auto mb-5">
+                    <iconify-icon icon="lucide:zap" width="30" style="color: #60A5FA;"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-2" style="color: #60A5FA;">Juvenil</h3>
+                <div class="text-4xl font-black mt-3 mb-2">14–17</div>
+                <div class="text-white/50 text-sm mb-6">años</div>
+                <div class="flex justify-center gap-3">
+                    <span class="px-4 py-2 rounded-full bg-race-blue-light/10 border border-race-blue-light/20 text-sm font-medium text-blue-300">
+                        <iconify-icon icon="lucide:user" width="14" class="mr-1"></iconify-icon> Varón
+                    </span>
+                    <span class="px-4 py-2 rounded-full bg-race-blue-light/10 border border-race-blue-light/20 text-sm font-medium text-blue-300">
+                        <iconify-icon icon="lucide:user" width="14" class="mr-1"></iconify-icon> Mujer
+                    </span>
+                </div>
+                <div class="mt-6 p-3 rounded-xl bg-race-yellow/10 border border-race-yellow/20">
+                    <p class="text-xs font-semibold text-race-yellow">🏆 Premio Bonus AAA+</p>
+                </div>
+            </div>
+            <!-- Libre -->
+            <div class="category-card libre">
+                <div class="w-16 h-16 rounded-full bg-race-green/10 flex items-center justify-center mx-auto mb-5">
+                    <iconify-icon icon="lucide:flame" width="30" style="color: #4ADE80;"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-2" style="color: #4ADE80;">Libre</h3>
+                <div class="text-4xl font-black mt-3 mb-2">18–39</div>
+                <div class="text-white/50 text-sm mb-6">años</div>
+                <div class="flex justify-center gap-3">
+                    <span class="px-4 py-2 rounded-full bg-race-green/10 border border-race-green/20 text-sm font-medium text-green-300">
+                        <iconify-icon icon="lucide:user" width="14" class="mr-1"></iconify-icon> Varón
+                    </span>
+                    <span class="px-4 py-2 rounded-full bg-race-green/10 border border-race-green/20 text-sm font-medium text-green-300">
+                        <iconify-icon icon="lucide:user" width="14" class="mr-1"></iconify-icon> Mujer
+                    </span>
+                </div>
+                <div class="mt-6 p-3 rounded-xl bg-race-yellow/10 border border-race-yellow/20">
+                    <p class="text-xs font-semibold text-race-yellow">🏆 Premio Bonus AA+</p>
+                </div>
+            </div>
+            <!-- Máster -->
+            <div class="category-card master">
+                <div class="w-16 h-16 rounded-full bg-race-yellow/10 flex items-center justify-center mx-auto mb-5">
+                    <iconify-icon icon="lucide:crown" width="30" style="color: #FFD700;"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold mb-2" style="color: #FFD700;">Máster</h3>
+                <div class="text-4xl font-black mt-3 mb-2">40+</div>
+                <div class="text-white/50 text-sm mb-6">años</div>
+                <div class="flex justify-center gap-3">
+                    <span class="px-4 py-2 rounded-full bg-race-yellow/10 border border-race-yellow/20 text-sm font-medium text-yellow-300">
+                        <iconify-icon icon="lucide:user" width="14" class="mr-1"></iconify-icon> Varón
+                    </span>
+                    <span class="px-4 py-2 rounded-full bg-race-yellow/10 border border-race-yellow/20 text-sm font-medium text-yellow-300">
+                        <iconify-icon icon="lucide:user" width="14" class="mr-1"></iconify-icon> Mujer
+                    </span>
+                </div>
+                <div class="mt-6 p-3 rounded-xl bg-race-yellow/10 border border-race-yellow/20">
+                    <p class="text-xs font-semibold text-race-yellow">🏆 Premio Bonus A+</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ROUTE SECTION -->
+<section id="recorrido" class="section-dark py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">El Camino</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Recorrido <span class="gradient-text">7 Kilómetros</span></h2>
+            <p class="text-white/50 mt-4 max-w-xl mx-auto">Desde el Estadio Cajonahuaylla hasta la Plaza de Armas de San Jerónimo.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-start scroll-reveal">
+            <!-- Route Map -->
+            <div class="map-container">
+                <img src="https://z-cdn-media.chatglm.cn/files/ee9ffa10-2f46-4cbd-9b53-9479d045a6bd.png?auth_key=1883523178-847a04e863fc465eb854fc803f653221-0-8d18332c5dfc486d4ddf42c597ea7feb" alt="Mapa del recorrido 7K Phaway Phu'spu" class="w-full">
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between">
+                    <span class="bg-race-green/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></span> INICIO
+                    </span>
+                    <span class="bg-race-red/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5">
+                        <iconify-icon icon="lucide:flag" width="14"></iconify-icon> FIN
+                    </span>
+                </div>
+            </div>
+
+            <!-- Route Points -->
+            <div class="space-y-0">
+                <div class="route-point pb-8">
+                    <div class="dot"></div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="text-xs font-bold text-race-green bg-race-green/10 px-2.5 py-1 rounded-full">INICIO • 0+000 km</span>
+                    </div>
+                    <h4 class="text-lg font-bold">Estadio Cajonahuaylla</h4>
+                    <p class="text-white/50 text-sm mt-1">Punto de concentración desde las 7:00 a.m. y partida oficial.</p>
+                </div>
+                <div class="route-point pb-8">
+                    <div class="dot"></div>
+                    <h4 class="text-lg font-bold">Avenida Manco Cápac</h4>
+                    <p class="text-white/50 text-sm mt-1">Primer tramo por la avenida principal del distrito.</p>
+                </div>
+                <div class="route-point pb-8">
+                    <div class="dot"></div>
+                    <h4 class="text-lg font-bold">Prolongación Av. La Cultura</h4>
+                    <p class="text-white/50 text-sm mt-1">Continuación por la vía de acceso universitario.</p>
+                </div>
+                <div class="route-point pb-8">
+                    <div class="dot"></div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="text-xs font-bold text-race-blue-light bg-race-blue-light/10 px-2.5 py-1 rounded-full">💧 HIDRATACIÓN • 3+400 km</span>
+                    </div>
+                    <h4 class="text-lg font-bold">Universidad Andina del Cusco</h4>
+                    <p class="text-white/50 text-sm mt-1">Subida por el costado de la universidad. Primera estación de hidratación.</p>
+                </div>
+                <div class="route-point pb-8">
+                    <div class="dot"></div>
+                    <h4 class="text-lg font-bold">Parque Larapa → Circunvalación Qenqoro</h4>
+                    <p class="text-white/50 text-sm mt-1">Paso por el parque y circunvalación del penal.</p>
+                </div>
+                <div class="route-point pb-8">
+                    <div class="dot"></div>
+                    <h4 class="text-lg font-bold">Calle Lima → Lloqllapata → Cementerio → Suárez</h4>
+                    <p class="text-white/50 text-sm mt-1">Tramo final por las calles del centro del distrito.</p>
+                </div>
+                <div class="route-point end">
+                    <div class="dot"></div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="text-xs font-bold text-race-red bg-race-red/10 px-2.5 py-1 rounded-full">💧 LLEGADA • 7+000 km</span>
+                    </div>
+                    <h4 class="text-lg font-bold">Plaza de Armas de San Jerónimo</h4>
+                    <p class="text-white/50 text-sm mt-1">Meta final y ceremonial de premiación. Segunda estación de hidratación.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REGISTRATION SECTION -->
+<section id="inscripcion" class="section-darker py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Participa</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Inscripción <span class="gradient-text">Gratuita</span></h2>
+            <p class="text-white/50 mt-4 max-w-2xl mx-auto">La inscripción es personal e intransferible. Completa el formulario o acércate a nuestras oficinas.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-10 scroll-reveal">
+            <!-- Info Sidebar -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="glass-card p-6">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <iconify-icon icon="lucide:calendar" width="20" style="color: #FFD700;"></iconify-icon>
+                        Fechas de Inscripción
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-white/5">
+                            <span class="text-white/60 text-sm">Inicio:</span>
+                            <span class="font-semibold text-sm">08 de julio 2026</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-white/5">
+                            <span class="text-white/60 text-sm">Cierre:</span>
+                            <span class="font-semibold text-sm">05 de agosto 2026</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-white/60 text-sm">Horario:</span>
+                            <span class="font-semibold text-sm text-race-yellow">08:00 - 17:00 hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <iconify-icon icon="lucide:map-pin" width="20" style="color: #60A5FA;"></iconify-icon>
+                        Lugar de Inscripción
+                    </h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        <strong class="text-white/90">Proyecto Protalento</strong><br>
+                        Casa de la Cultura<br>
+                        Calle Suárez, San Jerónimo
+                    </p>
+                </div>
+
+                <div class="glass-card p-6">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <iconify-icon icon="lucide:file-text" width="20" style="color: #4ADE80;"></iconify-icon>
+                        Requisitos
+                    </h3>
+                    <ul class="space-y-2.5">
+                        <li class="flex items-start gap-2.5 text-sm text-white/60">
+                            <iconify-icon icon="lucide:check-circle" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Copia simple del DNI
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-white/60">
+                            <iconify-icon icon="lucide:check-circle" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Ficha de Inscripción (Anexo N°01)
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-white/60">
+                            <iconify-icon icon="lucide:check-circle" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Declaración Jurada de Buena Salud (Anexo N°02)
+                        </li>
+                        <li class="flex items-start gap-2.5 text-sm text-white/60">
+                            <iconify-icon icon="lucide:check-circle" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Deslinde de Responsabilidades (Anexo N°03)
+                        </li>
+                    </ul>
+                    <div class="mt-4 p-3 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+                        <p class="text-xs text-yellow-300 leading-relaxed">
+                            <iconify-icon icon="lucide:info" width="14" class="mr-1"></iconify-icon>
+                            <strong>Menores de edad:</strong> Presentar DNI y anexos firmados por padre, madre o apoderado.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <iconify-icon icon="lucide:package" width="20" style="color: #F472B6;"></iconify-icon>
+                        Entrega de Kits
+                    </h3>
+                    <p class="text-white/60 text-sm leading-relaxed">
+                        <strong class="text-white/90">6 y 7 de Agosto 2026</strong><br>
+                        Plaza de San Jerónimo<br>
+                        9:00 a.m. - 12:00 p.m. / 2:00 p.m. - 5:00 p.m.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="lg:col-span-3">
+                <div class="gold-border p-8 bg-white/[0.02]">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold">Ficha de Inscripción</h3>
+                        <p class="text-white/40 text-sm mt-2">Anexo N° 01 — Carrera 7K Phaway Phu´spu</p>
+                    </div>
+
+                    <form id="registrationForm" onsubmit="handleRegistration(event)">
+                        <!-- Mayor de Edad -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-semibold text-race-yellow uppercase tracking-wider mb-5 flex items-center gap-2">
+                                <iconify-icon icon="lucide:user" width="16"></iconify-icon>
+                                Datos del Participante (Mayor de edad)
+                            </h4>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="form-label">Apellidos y Nombres completos *</label>
+                                    <input type="text" class="form-input" placeholder="Ej: GARCÍA PÉREZ, Juan Carlos" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">N° de DNI *</label>
+                                    <input type="text" class="form-input" placeholder="00000000" maxlength="8" required pattern="[0-9]{8}">
+                                </div>
+                                <div>
+                                    <label class="form-label">Edad *</label>
+                                    <input type="number" class="form-input" placeholder="Ej: 25" min="14" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">N° de Celular *</label>
+                                    <input type="tel" class="form-input" placeholder="Ej: 984000000" maxlength="9" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Domicilio</label>
+                                    <input type="text" class="form-input" placeholder="Dirección completa">
+                                </div>
+                                <div>
+                                    <label class="form-label">Distrito *</label>
+                                    <input type="text" class="form-input" placeholder="Ej: San Jerónimo" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Provincia *</label>
+                                    <input type="text" class="form-input" placeholder="Ej: Cusco" required>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="form-label">Departamento *</label>
+                                    <input type="text" class="form-input" placeholder="Ej: Cusco" value="Cusco" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menor de Edad -->
+                        <div class="mb-8 p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                            <h4 class="text-sm font-semibold text-race-blue-light uppercase tracking-wider mb-5 flex items-center gap-2">
+                                <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                Datos del Apoderado (Solo si es menor de edad)
+                            </h4>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="form-label">Nombre y Apellido del Padre/Apoderado</label>
+                                    <input type="text" class="form-input" placeholder="Completar solo si el participante es menor de edad">
+                                </div>
+                                <div>
+                                    <label class="form-label">DNI del Apoderado</label>
+                                    <input type="text" class="form-input" placeholder="00000000" maxlength="8" pattern="[0-9]{8}">
+                                </div>
+                                <div>
+                                    <label class="form-label">Celular del Apoderado</label>
+                                    <input type="tel" class="form-input" placeholder="984000000" maxlength="9">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categoría -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-semibold text-race-green uppercase tracking-wider mb-5 flex items-center gap-2">
+                                <iconify-icon icon="lucide:tag" width="16"></iconify-icon>
+                                Selección de Categoría *
+                            </h4>
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <label class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-blue-light/30 transition-all">
+                                    <input type="radio" name="categoria" value="juvenil-varon" class="w-4 h-4 accent-blue-500" required>
+                                    <div>
+                                        <div class="text-sm font-semibold">Juvenil Varón</div>
+                                        <div class="text-xs text-white/40">14 a 17 años</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-blue-light/30 transition-all">
+                                    <input type="radio" name="categoria" value="juvenil-mujer" class="w-4 h-4 accent-blue-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Juvenil Mujer</div>
+                                        <div class="text-xs text-white/40">14 a 17 años</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-green/30 transition-all">
+                                    <input type="radio" name="categoria" value="libre-varon" class="w-4 h-4 accent-green-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Libre Varón</div>
+                                        <div class="text-xs text-white/40">18 a 39 años</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-green/30 transition-all">
+                                    <input type="radio" name="categoria" value="libre-mujer" class="w-4 h-4 accent-green-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Libre Mujer</div>
+                                        <div class="text-xs text-white/40">18 a 39 años</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-yellow/30 transition-all">
+                                    <input type="radio" name="categoria" value="master-varon" class="w-4 h-4 accent-yellow-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Máster Varón</div>
+                                        <div class="text-xs text-white/40">40 a más años</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-yellow/30 transition-all">
+                                    <input type="radio" name="categoria" value="master-mujer" class="w-4 h-4 accent-yellow-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Máster Mujer</div>
+                                        <div class="text-xs text-white/40">40 a más años</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Declaración Jurada -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <iconify-icon icon="lucide:scroll-text" width="16"></iconify-icon>
+                                Declaración Jurada
+                            </h4>
+                            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] max-h-40 overflow-y-auto text-white/50 text-xs leading-relaxed">
+                                <p class="mb-3">Yo, [participante], identificado(a) con DNI N° [DNI], acepto las condiciones establecidas por la comisión organizadora de la Carrera 7K "Phaway Phu´spu", así como el reglamento y/o bases bajo las cuales se desarrollará la presente competencia deportiva.</p>
+                                <p class="mb-3">Asimismo, al momento de realizar mi inscripción, declaro asumir voluntariamente mi participación en el evento, deslindando de responsabilidad civil y penal a los organizadores ante cualquier consecuencia derivada de mi participación que pueda afectar mi integridad física o salud, reconociendo que la práctica deportiva requiere preparación y esfuerzo físico.</p>
+                                <p>Declaro conocer que la Carrera 7K "Phaway Phu´spu" es una competencia que exige condiciones físicas adecuadas, manifestando que me encuentro apto(a), preparado(a) y en condiciones de participar, asumiendo la responsabilidad correspondiente durante el desarrollo del evento.</p>
+                            </div>
+                            <label class="flex items-start gap-3 mt-4 cursor-pointer">
+                                <input type="checkbox" id="acceptTerms" class="w-4 h-4 mt-0.5 accent-yellow-500" required>
+                                <span class="text-sm text-white/60">Acepto las condiciones, el reglamento de la carrera y las bases establecidas. Declaro encontrarme apto(a) físicamente para participar. (<strong class="text-white/80">Obligatorio</strong>)</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full justify-center text-lg py-4">
+                            <iconify-icon icon="lucide:send" width="20"></iconify-icon>
+                            Enviar Pre-Inscripción
+                        </button>
+                        <p class="text-center text-white/30 text-xs mt-4">
+                            Nota: Esta pre-inscripción debe ser confirmada presencialmente en la oficina de Protalento presentando la documentación requerida.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCHEDULE SECTION -->
+<section id="cronograma" class="section-blue py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-race-yellow blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-race-blue-light blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Día de la Carrera</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Cronograma del <span class="gradient-text">Evento</span></h2>
+        </div>
+
+        <div class="max-w-2xl mx-auto scroll-reveal">
+            <div class="timeline-item">
+                <div class="tl-dot"></div>
+                <div class="text-race-yellow font-bold text-lg">07:00 a.m.</div>
+                <h4 class="text-lg font-semibold mt-1">Concentración y Registro</h4>
+                <p class="text-white/60 text-sm mt-1">Estadio Cajonahuaylla. Registro de participantes y organización.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-dot"></div>
+                <div class="text-race-yellow font-bold text-lg">08:45 a.m.</div>
+                <h4 class="text-lg font-semibold mt-1">Calentamiento General</h4>
+                <p class="text-white/60 text-sm mt-1">Sesión de calentamiento dirigida para todos los participantes.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-dot" style="background: #4ADE80; box-shadow: 0 0 8px rgba(74,222,128,0.4);"></div>
+                <div class="text-green-400 font-bold text-lg">09:00 a.m.</div>
+                <h4 class="text-lg font-semibold mt-1">🚩 Partida Oficial</h4>
+                <p class="text-white/60 text-sm mt-1">Salida desde el Estadio Cajonahuaylla para todas las categorías.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-dot" style="background: #60A5FA; box-shadow: 0 0 8px rgba(96,165,250,0.4);"></div>
+                <div class="text-blue-300 font-bold text-lg">~09:25 a.m.</div>
+                <h4 class="text-lg font-semibold mt-1">💧 1ra Estación de Hidratación</h4>
+                <p class="text-white/60 text-sm mt-1">Punto km 3+400 — Universidad Andina del Cusco.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-dot" style="background: #60A5FA; box-shadow: 0 0 8px rgba(96,165,250,0.4);"></div>
+                <div class="text-blue-300 font-bold text-lg">~09:50 a.m.</div>
+                <h4 class="text-lg font-semibold mt-1">💧 2da Estación de Hidratación</h4>
+                <p class="text-white/60 text-sm mt-1">Punto km 7+000 — Cerca de la Plaza de Armas.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-dot" style="background: #F472B6; box-shadow: 0 0 8px rgba(244,114,182,0.4);"></div>
+                <div class="text-pink-300 font-bold text-lg">~10:00 a.m.</div>
+                <h4 class="text-lg font-semibold mt-1">🏁 Llegada y Premiación</h4>
+                <p class="text-white/60 text-sm mt-1">Plaza de Armas de San Jerónimo. Ceremonia de premiación para las categorías ganadoras.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AWARDS SECTION -->
+<section id="premiacion" class="section-dark py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Reconocimiento</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Premiación <span class="gradient-text">Especial</span></h2>
+            <p class="text-white/50 mt-4 max-w-xl mx-auto">Los ganadores deberán portar su indumentaria deportiva y presentar su DNI original.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 scroll-reveal">
+            <div class="glass-card p-8 text-center group">
+                <div class="text-6xl mb-4">🥇</div>
+                <div class="inline-block px-4 py-1.5 rounded-full bg-race-blue-light/10 border border-race-blue-light/20 text-xs font-bold text-blue-300 mb-4">JUVENIL</div>
+                <h3 class="text-xl font-bold mb-2">14 a 17 años</h3>
+                <p class="text-white/50 text-sm mb-6">Varón y Mujer</p>
+                <div class="p-4 rounded-xl bg-gradient-to-r from-race-yellow/10 to-orange-500/10 border border-race-yellow/20">
+                    <div class="text-2xl font-black gradient-text">BONUS AAA+</div>
+                    <p class="text-xs text-white/40 mt-1">Premio Especial</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 text-center group">
+                <div class="text-6xl mb-4">🥇</div>
+                <div class="inline-block px-4 py-1.5 rounded-full bg-race-green/10 border border-race-green/20 text-xs font-bold text-green-300 mb-4">LIBRE</div>
+                <h3 class="text-xl font-bold mb-2">18 a 39 años</h3>
+                <p class="text-white/50 text-sm mb-6">Varón y Mujer</p>
+                <div class="p-4 rounded-xl bg-gradient-to-r from-race-yellow/10 to-orange-500/10 border border-race-yellow/20">
+                    <div class="text-2xl font-black gradient-text">BONUS AA+</div>
+                    <p class="text-xs text-white/40 mt-1">Premio Especial</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 text-center group">
+                <div class="text-6xl mb-4">🥇</div>
+                <div class="inline-block px-4 py-1.5 rounded-full bg-race-yellow/10 border border-race-yellow/20 text-xs font-bold text-yellow-300 mb-4">MÁSTER</div>
+                <h3 class="text-xl font-bold mb-2">40 a más años</h3>
+                <p class="text-white/50 text-sm mb-6">Varón y Mujer</p>
+                <div class="p-4 rounded-xl bg-gradient-to-r from-race-yellow/10 to-orange-500/10 border border-race-yellow/20">
+                    <div class="text-2xl font-black gradient-text">BONUS A+</div>
+                    <p class="text-xs text-white/40 mt-1">Premio Especial</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECURITY & CONTROL -->
+<section class="section-darker py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Seguridad</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Control y <span class="gradient-text">Seguridad</span></h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 scroll-reveal">
+            <div class="glass-card p-6 text-center">
+                <div class="w-14 h-14 rounded-2xl bg-race-yellow/10 flex items-center justify-center mx-auto mb-4">
+                    <iconify-icon icon="lucide:gavel" width="26" style="color: #FFD700;"></iconify-icon>
+                </div>
+                <h4 class="font-bold mb-2">Jueces Oficiales</h4>
+                <p class="text-white/50 text-sm">Equipo de jueces designados con un Juez Principal para supervisar la competencia.</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <div class="w-14 h-14 rounded-2xl bg-race-blue-light/10 flex items-center justify-center mx-auto mb-4">
+                    <iconify-icon icon="lucide:shield" width="26" style="color: #60A5FA;"></iconify-icon>
+                </div>
+                <h4 class="font-bold mb-2">Policía Nacional</h4>
+                <p class="text-white/50 text-sm">La PNP y Seguridad Ciudadana garantizarán el orden durante el evento.</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <div class="w-14 h-14 rounded-2xl bg-race-green/10 flex items-center justify-center mx-auto mb-4">
+                    <iconify-icon icon="lucide:heart-pulse" width="26" style="color: #4ADE80;"></iconify-icon>
+                </div>
+                <h4 class="font-bold mb-2">Atención Médica</h4>
+                <p class="text-white/50 text-sm">Personal médico y unidades de emergencia en el recorrido.</p>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <div class="w-14 h-14 rounded-2xl bg-race-red/10 flex items-center justify-center mx-auto mb-4">
+                    <iconify-icon icon="lucide:droplets" width="26" style="color: #F87171;"></iconify-icon>
+                </div>
+                <h4 class="font-bold mb-2">Hidratación</h4>
+                <p class="text-white/50 text-sm">2 estaciones estratégicas de hidratación en el recorrido.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 p-6 rounded-2xl bg-race-red/5 border border-race-red/20 scroll-reveal">
+            <div class="flex items-start gap-4">
+                <iconify-icon icon="lucide:octagon-x" width="28" style="color: #F87171; flex-shrink: 0; margin-top: 2px;"></iconify-icon>
+                <div>
+                    <h4 class="font-bold text-red-300 text-lg mb-2">Prohibido</h4>
+                    <p class="text-white/60 text-sm leading-relaxed">Queda terminantemente prohibido utilizar vehículos u otros medios de transporte para acompañar o seguir a los atletas participantes durante todo el recorrido, con la finalidad de garantizar la seguridad, transparencia y correcto desarrollo del evento deportivo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BASES / RULES SECTION -->
+<section id="bases" class="section-dark py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Reglamento</span>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Bases de la <span class="gradient-text">Competencia</span></h2>
+        </div>
+
+        <!-- FAQ Style -->
+        <div class="max-w-3xl mx-auto space-y-0 scroll-reveal">
+            <!-- Descalificación -->
+            <div class="faq-item open">
+                <button class="w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:octagon-x" width="20" style="color: #F87171;"></iconify-icon>
+                        <span class="font-semibold text-lg">Motivos de Descalificación</span>
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="20" class="faq-icon text-white/40"></iconify-icon>
+                </button>
+                <div class="faq-answer">
+                    <ul class="space-y-3 pl-9">
+                        <li class="flex items-start gap-2.5 text-white/60 text-sm">
+                            <iconify-icon icon="lucide:x-circle" width="16" style="color: #F87171; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            No portar el número distintivo de participación asignado o no llevarlo visible.
+                        </li>
+                        <li class="flex items-start gap-2.5 text-white/60 text-sm">
+                            <iconify-icon icon="lucide:x-circle" width="16" style="color: #F87171; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            No cumplir con la ruta establecida o evadir puntos de control.
+                        </li>
+                        <li class="flex items-start gap-2.5 text-white/60 text-sm">
+                            <iconify-icon icon="lucide:x-circle" width="16" style="color: #F87171; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Utilizar cualquier medio de transporte (moto, auto, bicicleta u otro).
+                        </li>
+                        <li class="flex items-start gap-2.5 text-white/60 text-sm">
+                            <iconify-icon icon="lucide:x-circle" width="16" style="color: #F87171; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Presentar conducta antideportiva hacia participantes, jueces o público.
+                        </li>
+                        <li class="flex items-start gap-2.5 text-white/60 text-sm">
+                            <iconify-icon icon="lucide:x-circle" width="16" style="color: #F87171; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            Participar en más de una categoría.
+                        </li>
+                        <li class="flex items-start gap-2.5 text-white/60 text-sm">
+                            <iconify-icon icon="lucide:x-circle" width="16" style="color: #F87171; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            No registrar paso por los puntos de control establecidos.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Disposiciones Finales -->
+            <div class="faq-item">
+                <button class="w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:scroll-text" width="20" style="color: #FFD700;"></iconify-icon>
+                        <span class="font-semibold text-lg">Disposiciones Finales</span>
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="20" class="faq-icon text-white/40"></iconify-icon>
+                </button>
+                <div class="faq-answer">
+                    <div class="pl-9 space-y-3 text-white/60 text-sm leading-relaxed">
+                        <p>La organización no se responsabiliza por daños, lesiones o perjuicios que pudieran ocasionarse durante la competencia, ya sea por acciones propias del participante o por situaciones generadas por terceros.</p>
+                        <p>Los participantes, mediante su inscripción, declaran conocer y aceptar las condiciones establecidas en el reglamento, comprometiéndose a cumplir las disposiciones de la organización.</p>
+                        <p>Los corredores manifiestan su voluntad de participar de manera voluntaria, respetando las indicaciones del personal organizador, jueces y equipos de apoyo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Participantes -->
+            <div class="faq-item">
+                <button class="w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:users" width="20" style="color: #60A5FA;"></iconify-icon>
+                        <span class="font-semibold text-lg">¿Quiénes pueden participar?</span>
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="20" class="faq-icon text-white/40"></iconify-icon>
+                </button>
+                <div class="faq-answer">
+                    <div class="pl-9 text-white/60 text-sm leading-relaxed space-y-2">
+                        <p>Podrán participar deportistas, atletas aficionados y público en general, tanto del distrito de San Jerónimo como de otras localidades, que cumplan con los requisitos establecidos.</p>
+                        <p>Personas de ambos sexos, de 14 a más años, debidamente inscritas en la categoría que les corresponda. La edad será verificada mediante DNI al momento de la inscripción.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anexos -->
+            <div class="faq-item">
+                <button class="w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)">
+                    <span class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:file-stack" width="20" style="color: #4ADE80;"></iconify-icon>
+                        <span class="font-semibold text-lg">Anexos requeridos</span>
+                    </span>
+                    <iconify-icon icon="lucide:chevron-down" width="20" class="faq-icon text-white/40"></iconify-icon>
+                </button>
+                <div class="faq-answer">
+                    <div class="pl-9 space-y-3 text-white/60 text-sm">
+                        <div class="flex items-start gap-2.5">
+                            <iconify-icon icon="lucide:file-text" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            <div><strong class="text-white/80">Anexo N° 01:</strong> Ficha de Inscripción (llenado individual)</div>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <iconify-icon icon="lucide:file-text" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            <div><strong class="text-white/80">Anexo N° 02:</strong> Declaración Jurada de Buena Salud</div>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <iconify-icon icon="lucide:file-text" width="16" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            <div><strong class="text-white/80">Anexo N° 03:</strong> Deslinde de Responsabilidades</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="https://picsum.photos/seed/sanjeronimo-run/1920/800.jpg" alt="Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-race-dark/95 via-race-dark/80 to-race-dark/60"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div class="max-w-2xl mx-auto scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">¿Listo para <span class="gradient-text">correr</span>?</h2>
+            <p class="text-white/60 text-lg mb-10 leading-relaxed">
+                No pierdas la oportunidad de ser parte de la Carrera 7K Phaway Phu´spu. Inscríbete gratis y demuestra tu espíritu competitivo en San Jerónimo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#inscripcion" class="btn-primary text-lg">
+                    <iconify-icon icon="lucide:edit-3" width="20"></iconify-icon>
+                    Inscríbete Ahora
+                </a>
+                <a href="#recorrido" class="btn-secondary text-lg">
+                    <iconify-icon icon="lucide:map" width="20"></iconify-icon>
+                    Ver Recorrido
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="section-darker border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Logo & Info -->
+            <div class="lg:col-span-2">
+                <img src="https://z-cdn-media.chatglm.cn/files/4de7f8cc-0ef5-481a-b545-5224a9070287.png?auth_key=1883523179-6743d032e54e446f95d258f8eb375ffc-0-434c736339300851bd0f087a3760631c" alt="Logo" class="h-20 w-auto mb-4">
+                <p class="text-white/50 text-sm leading-relaxed max-w-md mb-6">
+                    La Municipalidad Distrital de San Jerónimo, a través de la Gerencia de Desarrollo Social, organiza la Carrera 7K "Phaway Phu´spu" para promover el deporte y la vida saludable.
+                </p>
+                <div class="flex items-center gap-3 text-white/40 text-sm">
+                    <iconify-icon icon="lucide:map-pin" width="16" style="color: #FFD700;"></iconify-icon>
+                    San Jerónimo, Cusco, Perú
+                </div>
+            </div>
+
+            <!-- Enlaces Rápidos -->
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider text-white/70 mb-5">Enlaces Rápidos</h4>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="text-white/40 hover:text-race-yellow text-sm transition-colors">Acerca de</a></li>
+                    <li><a href="#categorias" class="text-white/40 hover:text-race-yellow text-sm transition-colors">Categorías</a></li>
+                    <li><a href="#recorrido" class="text-white/40 hover:text-race-yellow text-sm transition-colors">Recorrido</a></li>
+                    <li><a href="#inscripcion" class="text-white/40 hover:text-race-yellow text-sm transition-colors">Inscripción</a></li>
+                    <li><a href="#cronograma" class="text-white/40 hover:text-race-yellow text-sm transition-colors">Cronograma</a></li>
+                    <li><a href="#premiacion" class="text-white/40 hover:text-race-yellow text-sm transition-colors">Premiación</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacto -->
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider text-white/70 mb-5">Contacto</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-white/40 text-sm">
+                        <iconify-icon icon="lucide:building-2" width="16" style="color: #FFD700; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                        Gerencia de Desarrollo Social<br>Municipalidad Distrital de San Jerónimo
+                    </li>
+                    <li class="flex items-center gap-3 text-white/40 text-sm">
+                        <iconify-icon icon="lucide:map-pin" width="16" style="color: #FFD700; flex-shrink: 0;"></iconify-icon>
+                        Proyecto Protalento, Casa de la Cultura, Calle Suárez
+                    </li>
+                    <li class="flex items-center gap-3 text-white/40 text-sm">
+                        <iconify-icon icon="lucide:clock" width="16" style="color: #FFD700; flex-shrink: 0;"></iconify-icon>
+                        Lun - Vie: 08:00 - 17:00 hrs
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-white/30 text-xs">© 2026 Municipalidad Distrital de San Jerónimo. Todos los derechos reservados.</p>
+            <p class="text-white/30 text-xs">Carrera 7K "Phaway Phu´spu" — San Jerónimo 2026</p>
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+    // Countdown Timer - Set to August 9, 2026 (estimated race day)
+    function updateCountdown() {
+        const raceDate = new Date('2026-08-09T09:00:00-05:00').getTime();
+        const now = new Date().getTime();
+        const diff = raceDate - now;
+
+        if (diff <= 0) {
+            document.getElementById('cd-days').textContent = '00';
+            document.getElementById('cd-hours').textContent = '00';
+            document.getElementById('cd-mins').textContent = '00';
+            document.getElementById('cd-secs').textContent = '00';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.style.backdropFilter = 'blur(12px)';
+            navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+        } else {
+            navbar.style.background = 'transparent';
+            navbar.style.backdropFilter = 'none';
+            navbar.style.borderBottom = 'none';
+        }
+    });
+
+    // Mobile menu
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+    function closeMobileMenu() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    }
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Toggle clicked
+        if (!wasOpen) item.classList.add('open');
+    }
+
+    // Form handling
+    function handleRegistration(e) {
+        e.preventDefault();
+        const checkbox = document.getElementById('acceptTerms');
+        if (!checkbox.checked) {
+            showToast('Por favor, acepte la declaración jurada para continuar.', 'warning');
+            return;
+        }
+        showToast('¡Pre-inscripción enviada exitosamente! Confirme presencialmente en Protalento.', 'success');
+        e.target.reset();
+    }
+
+    // Toast notification
+    function showToast(message, type = 'success') {
+        const toast = document.getElementById('toast');
+        const msg = document.getElementById('toast-msg');
+        msg.textContent = message;
+
+        if (type === 'warning') {
+            toast.style.background = 'rgba(234, 179, 8, 0.95)';
+        } else {
+            toast.style.background = 'rgba(22, 163, 74, 0.95)';
+        }
+
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 5000);
+    }
+
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
