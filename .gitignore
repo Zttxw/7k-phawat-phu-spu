@@ -1,0 +1,22 @@
+# Dependencias
+/vendor/
+/node_modules/
+
+# Datos sensibles y logs
+/storage/*.xlsx
+/storage/*.json
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Config local con credenciales reales
+/includes/config.local.php
+
+# Editores / SO
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store
+
+# El HTML monolítico original ya migrado
+/index.html

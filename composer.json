@@ -1,0 +1,22 @@
+{
+    "name": "municipalidad-san-jeronimo/carrera-7k",
+    "description": "Sistema de pre-inscripción para la Carrera 7K Phaway Phu'spu — San Jerónimo, Cusco",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "phpoffice/phpspreadsheet": "^2.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform-check": false
+    },
+    "autoload": {
+        "files": [
+            "includes/config.php",
+            "includes/security.php",
+            "includes/excel-handler.php"
+        ]
+    }
+}

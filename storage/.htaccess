@@ -1,0 +1,5 @@
+# Bloquea TODO acceso web al directorio de storage.
+# Este .htaccess es una defensa en profundidad adicional; el directorio
+# debería estar FUERA de public_html para que no sea alcanzable via URL.
+
+Require all denied

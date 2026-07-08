@@ -1,0 +1,86 @@
+# ============================================================
+# Carrera 7K — .htaccess de public_html
+# Seguridad + performance + rewrite básico
+# ============================================================
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+
+# ---------- Redirigir todo a HTTPS ----------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---------- Bloquear acceso a archivos sensibles ----------
+<FilesMatch "^\.(env|git|htaccess|htpasswd)|composer\.(json|lock)|package\.json|\.log$|\.sql$|\.bak$|\.sh$|\.md$">
+    Require all denied
+</FilesMatch>
+
+# ---------- Bloquear métodos HTTP no usados ----------
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DEBUG|CONNECT)$
+    RewriteRule .* - [F]
+</IfModule>
+
+# ---------- Headers de seguridad ----------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    # HSTS: 1 año, incluye subdominios. Activar solo cuando el sitio esté 100% en HTTPS.
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+    # CSP — ajusta según los CDN externos que uses.
+    Header always set Content-Security-Policy "default-src 'self'; \
+img-src 'self' data: https:; \
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; \
+font-src 'self' https://fonts.gstatic.com data:; \
+script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://code.iconify.design https://api.iconify.design https://api.simplesvg.com https://api.unisvg.com; \
+connect-src 'self' https://api.iconify.design https://api.simplesvg.com https://api.unisvg.com; \
+frame-ancestors 'self'; \
+base-uri 'self'; \
+form-action 'self'"
+    # Ocultar versión del servidor donde sea posible
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ---------- Compresión ----------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------- Cache de estáticos ----------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css                "access plus 30 days"
+    ExpiresByType application/javascript  "access plus 30 days"
+    ExpiresByType image/jpeg              "access plus 60 days"
+    ExpiresByType image/png               "access plus 60 days"
+    ExpiresByType image/webp              "access plus 60 days"
+    ExpiresByType image/svg+xml           "access plus 60 days"
+    ExpiresByType image/x-icon            "access plus 60 days"
+    ExpiresByType font/woff2              "access plus 60 days"
+    ExpiresByType text/html               "access plus 0 seconds"
+    ExpiresDefault                        "access plus 7 days"
+</IfModule>
+
+# ---------- Impide ejecución de PHP en carpetas de subida (defensa en profundidad) ----------
+<FilesMatch "\.(gif|jpe?g|png|webp|svg|ico|css|js|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+</FilesMatch>
+
+# ---------- Límite de tamaño del body (POST) ----------
+<IfModule mod_php.c>
+    php_value upload_max_filesize 2M
+    php_value post_max_size       2M
+</IfModule>
+
+# ---------- Error personalizado ----------
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html
