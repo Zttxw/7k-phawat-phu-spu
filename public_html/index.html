@@ -1506,16 +1506,11 @@
         }).addTo(map);
 
         function lockMapToRoute() {
-            // Calculamos el rectángulo exacto de la ruta con un margen del 5%
+            if (!map.getSize().x) return; // Evitar crash si está oculto
             const bounds = routeLine.getBounds().pad(0.05);
-
-            // Encuadrar la cámara
             map.fitBounds(bounds);
-
-            // Fijar el zoom mínimo para que no puedan alejar más allá de esta vista
-            map.setMinZoom(map.getBoundsZoom(bounds));
-
-            // Bloquear el paneo
+            const z = map.getBoundsZoom(bounds);
+            if (isFinite(z)) map.setMinZoom(z);
             map.setMaxBounds(bounds);
         }
 
