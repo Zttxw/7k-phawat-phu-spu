@@ -286,6 +286,12 @@ h6,
     -webkit-text-fill-color: #20BFA8;
 }
 
+@media (max-width: 768px) {
+    .hero-date {
+        font-size: 17vw; /* Tamaño ajustado para que encaje bien sin desbordar */
+    }
+}
+
 @media (min-width: 1200px) {
     .hero-date {
         font-size: min(150px, 15vh);
