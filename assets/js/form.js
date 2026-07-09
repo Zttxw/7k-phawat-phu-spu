@@ -175,9 +175,22 @@
 
             if (res.ok && data.success) {
                 window.showToast(
-                    data.message || '¡Pre-inscripción registrada! Confirme presencialmente en Protalento.',
+                    data.message || '¡Pre-inscripción registrada!',
                     'success'
                 );
+                
+                // Ocultar el formulario y mostrar el div de éxito
+                form.classList.add('hidden');
+                const regSuccess = document.getElementById('registrationSuccess');
+                if (regSuccess) {
+                    regSuccess.classList.remove('hidden');
+                    // Si el backend envía un mensaje específico, actualizar el texto
+                    if (data.message) {
+                        const successMsgEl = regSuccess.querySelector('p');
+                        if (successMsgEl) successMsgEl.textContent = data.message;
+                    }
+                }
+                
                 form.reset();
                 fetchCsrfToken(); // renovar token después de éxito
             } else if (res.status === 429) {
