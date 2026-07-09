@@ -138,8 +138,8 @@
         const edad = parseInt(edadInput ? edadInput.value : '0', 10);
         const cat = catSelect ? catSelect.value : '';
         
-        // Es menor si tiene < 18 años o si seleccionó categoría juvenil
-        const esMenor = (edad > 0 && edad < 18) || cat.startsWith('juvenil');
+        // Es menor si tiene entre 14 y 17 años o si seleccionó categoría juvenil
+        const esMenor = (edad >= 14 && edad <= 17) || cat.startsWith('juvenil');
         
         if (esMenor) {
             fsApoderado.classList.remove('hidden');
