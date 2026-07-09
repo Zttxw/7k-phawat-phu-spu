@@ -127,6 +127,31 @@
     }
 
     // -------------------------------------------------------------------------
+    // Mostrar/Ocultar campos de apoderado
+    // -------------------------------------------------------------------------
+    const edadInput = form.querySelector('[name="edad"]');
+    const catSelect = form.querySelector('[name="categoria"]');
+    const fsApoderado = document.getElementById('fs-apoderado');
+
+    function toggleApoderado() {
+        if (!fsApoderado) return;
+        const edad = parseInt(edadInput ? edadInput.value : '0', 10);
+        const cat = catSelect ? catSelect.value : '';
+        
+        // Es menor si tiene < 18 años o si seleccionó categoría juvenil
+        const esMenor = (edad > 0 && edad < 18) || cat.startsWith('juvenil');
+        
+        if (esMenor) {
+            fsApoderado.classList.remove('hidden');
+        } else {
+            fsApoderado.classList.add('hidden');
+        }
+    }
+
+    if (edadInput) edadInput.addEventListener('input', toggleApoderado);
+    if (catSelect) catSelect.addEventListener('change', toggleApoderado);
+
+    // -------------------------------------------------------------------------
     // Submit
     // -------------------------------------------------------------------------
     form.addEventListener('submit', async (e) => {
