@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    window.onerror = function(msg, url, line) {
+        alert("Error JS en línea " + line + ":\n" + msg);
+    };
+    </script>
     <meta name="description"
         content="Carrera 7K Phaway Phu'spu — San Jerónimo, Cusco. Inscripción gratuita. Agosto 2026.">
     <meta name="theme-color" content="#0F172A">
@@ -19,9 +24,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Leaflet & Chart.js -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.6.0/leaflet.polylineDecorator.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <!-- Estilos propios -->
