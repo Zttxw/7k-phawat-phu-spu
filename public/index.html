@@ -30,7 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="assets/css/styles.css?v=3">
 
     <!-- Tailwind (para producción real, compilar localmente; el CDN es solo para prototipo) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -112,6 +112,29 @@
         </div>
     </nav>
 
+    <!-- ============================================================ -->
+    <!-- MOBILE MENU                                                  -->
+    <!-- ============================================================ -->
+    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 top-[70px] bg-race-dark/95 backdrop-blur-md z-[999] flex flex-col items-center justify-start pt-8 px-6 gap-5 transition-all">
+        <a href="#hero" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Inicio</a>
+        <a href="#evento" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Evento</a>
+        <a href="#categorias" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Categorías</a>
+        <a href="#recorrido" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Recorrido</a>
+        <a href="#cronograma" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Cronograma</a>
+        <a href="#inscripcion" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Inscripción</a>
+        
+        <div class="flex gap-6 mt-6 pt-6 border-t border-white/10">
+            <a href="https://www.facebook.com/Municipalidaddesanjeronimo/?locale=es_LA" target="_blank" class="text-white hover:text-race-yellow transition-colors" aria-label="Facebook">
+                <iconify-icon icon="fa6-brands:facebook-f" width="20"></iconify-icon>
+            </a>
+            <a href="https://www.instagram.com/sanjeronimocusco/" target="_blank" class="text-white hover:text-race-yellow transition-colors" aria-label="Instagram">
+                <iconify-icon icon="fa6-brands:instagram" width="22"></iconify-icon>
+            </a>
+            <a href="https://www.tiktok.com/@sanjeronimocusco" target="_blank" class="text-white hover:text-race-yellow transition-colors" aria-label="TikTok">
+                <iconify-icon icon="fa6-brands:tiktok" width="20"></iconify-icon>
+            </a>
+        </div>
+    </div>
     <!-- ============================================================ -->
     <!-- HERO VIDEO SECTION                                           -->
     <!-- ============================================================ -->

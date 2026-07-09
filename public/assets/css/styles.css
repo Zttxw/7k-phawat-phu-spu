@@ -1256,9 +1256,7 @@ h6,
         gap: 28px 32px;
     }
     .sponsors-divider-vertical {
-        height: 1px;
-        width: 100px;
-        margin: 10px 0;
+        display: none;
     }
     .logo-cusco {
         height: 132px !important;
@@ -1269,9 +1267,6 @@ h6,
     .logo-apoyan {
         height: 132px !important;
         max-width: 280px !important;
-    }
-    .sponsors-divider-vertical {
-        height: 80px;
     }
 }
 
