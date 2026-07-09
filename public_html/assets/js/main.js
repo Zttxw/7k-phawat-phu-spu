@@ -9,36 +9,57 @@
     const RACE_ISO = document.documentElement.dataset.raceDate || '2026-08-09T09:00:00-05:00';
 
     // -------------------------------------------------------------------------
-    // Countdown
+    // Countdown de Carrera
     // -------------------------------------------------------------------------
+    const EVENT_DATE = new Date(RACE_ISO);
+    const START_DATE = new Date('2026-07-01T00:00:00');
+
     const cdEls = {
-        days:  document.getElementById('cd-days'),
-        hours: document.getElementById('cd-hours'),
-        mins:  document.getElementById('cd-mins'),
-        secs:  document.getElementById('cd-secs')
+        days:  document.getElementById('cdDays'),
+        hours: document.getElementById('cdHours'),
+        mins:  document.getElementById('cdMinutes'),
+        secs:  document.getElementById('cdSeconds'),
+        fill:  document.getElementById('raceFill'),
+        runner: document.getElementById('raceRunner')
     };
-    const raceMs = new Date(RACE_ISO).getTime();
 
     function updateCountdown() {
-        if (!cdEls.days) return;
-        const diff = raceMs - Date.now();
+        if (!cdEls.days) return false;
+        
+        const now = new Date();
+        const diff = EVENT_DATE - now;
+
         if (diff <= 0) {
             cdEls.days.textContent = '00';
             cdEls.hours.textContent = '00';
             cdEls.mins.textContent = '00';
             cdEls.secs.textContent = '00';
+            if(cdEls.fill) cdEls.fill.style.width = '100%';
+            if(cdEls.runner) cdEls.runner.style.left = '100%';
             return false;
         }
-        const days  = Math.floor(diff / 86400000);
+
+        const days = Math.floor(diff / 86400000);
         const hours = Math.floor((diff % 86400000) / 3600000);
-        const mins  = Math.floor((diff % 3600000) / 60000);
-        const secs  = Math.floor((diff % 60000) / 1000);
-        cdEls.days.textContent  = String(days).padStart(2, '0');
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+
+        cdEls.days.textContent = String(days).padStart(2, '0');
         cdEls.hours.textContent = String(hours).padStart(2, '0');
-        cdEls.mins.textContent  = String(mins).padStart(2, '0');
-        cdEls.secs.textContent  = String(secs).padStart(2, '0');
+        cdEls.mins.textContent = String(mins).padStart(2, '0');
+        cdEls.secs.textContent = String(secs).padStart(2, '0');
+
+        if(cdEls.fill && cdEls.runner) {
+            const totalSpan = EVENT_DATE - START_DATE;
+            const elapsed = now - START_DATE;
+            const progress = Math.min(100, Math.max(0, (elapsed / totalSpan) * 100));
+            cdEls.fill.style.width = progress + '%';
+            cdEls.runner.style.left = progress + '%';
+        }
+
         return true;
     }
+
     if (updateCountdown() !== false) {
         setInterval(updateCountdown, 1000);
     }
@@ -51,14 +72,8 @@
         const onScroll = () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('nav-scrolled');
-                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-                navbar.style.backdropFilter = 'blur(12px)';
-                navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
             } else {
                 navbar.classList.remove('nav-scrolled');
-                navbar.style.background = 'transparent';
-                navbar.style.backdropFilter = 'none';
-                navbar.style.borderBottom = 'none';
             }
         };
         window.addEventListener('scroll', onScroll, { passive: true });
@@ -106,30 +121,62 @@
     }
 
     // -------------------------------------------------------------------------
-    // Active nav link on scroll (throttled con requestAnimationFrame)
+    // SPA TAB NAVIGATION
     // -------------------------------------------------------------------------
-    const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    let scrollTicking = false;
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    const tabMapping = {
+        'hero': ['hero', 'hero-countdown'],
+        'categorias': ['categorias'],
+        'recorrido': ['recorrido', 'seguridad'],
+        'cronograma': ['cronograma'],
+        'inscripcion': ['inscripcion', 'bases']
+    };
 
-    function updateActiveNav() {
-        let current = '';
-        sections.forEach(section => {
-            if (window.scrollY >= section.offsetTop - 100) {
-                current = section.id;
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetAttr = link.getAttribute('href');
+            if(!targetAttr || !targetAttr.startsWith('#')) return;
+            
+            e.preventDefault();
+            const targetId = targetAttr.replace('#', '');
+            
+            // Update active link classes
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            document.querySelectorAll(`.nav-link[href="#${targetId}"]`).forEach(nav => nav.classList.add('active'));
+            
+            // Get sections to show
+            const sectionsToShow = tabMapping[targetId] || [targetId];
+            
+            // Hide all, show targeted
+            tabContents.forEach(section => {
+                if (sectionsToShow.includes(section.id)) {
+                    section.classList.add('active-tab');
+                } else {
+                    section.classList.remove('active-tab');
+                }
+            });
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                const menuBtnIcon = document.querySelector('#mobile-menu-btn iconify-icon');
+                if(menuBtnIcon) menuBtnIcon.setAttribute('icon', 'lucide:menu');
             }
+            
+            // Scroll to top
+            window.scrollTo({top: 0});
+            
+            // Fix para componentes que requieren recalcular su tamaño (ej. Leaflet Maps)
+            // Se ejecuta ligeramente después para asegurar que el display: block ya aplicó.
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 50);
         });
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-        });
-        scrollTicking = false;
-    }
-    window.addEventListener('scroll', () => {
-        if (!scrollTicking) {
-            requestAnimationFrame(updateActiveNav);
-            scrollTicking = true;
-        }
-    }, { passive: true });
+    });
 
     // -------------------------------------------------------------------------
     // Toast helper expuesto globalmente

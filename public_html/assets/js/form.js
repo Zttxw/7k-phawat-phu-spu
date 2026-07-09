@@ -6,6 +6,21 @@
     const form = document.getElementById('registrationForm');
     if (!form) return;
 
+    const submitBtn = document.getElementById('submitBtn');
+    const acceptTerms = document.getElementById('acceptTerms');
+    
+    if (acceptTerms && submitBtn) {
+        acceptTerms.addEventListener('change', () => {
+            if (acceptTerms.checked) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        });
+    }
+
     const CSRF_ENDPOINT = 'api/csrf-token.php';
     const SUBMIT_ENDPOINT = 'api/inscripcion.php';
 

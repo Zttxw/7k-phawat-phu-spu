@@ -11,12 +11,5 @@
         "optimize-autoloader": true,
         "sort-packages": true,
         "platform-check": false
-    },
-    "autoload": {
-        "files": [
-            "includes/config.php",
-            "includes/security.php",
-            "includes/excel-handler.php"
-        ]
     }
 }

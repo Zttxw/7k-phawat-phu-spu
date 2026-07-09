@@ -38,6 +38,8 @@ const EXCEL_HEADERS = [
     'Nombre Apoderado',
     'DNI Apoderado',
     'Celular Apoderado',
+    'Acepta DJ',
+    'Estado',
     'IP',
 ];
 
@@ -151,6 +153,8 @@ function excel_append_row(array $row): array {
             $row['apoderado_nombres'],
             $row['apoderado_dni'],
             $row['apoderado_celular'],
+            $row['acepta_dj'],
+            $row['estado'],
             $row['ip'],
         ];
 

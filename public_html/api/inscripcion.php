@@ -188,6 +188,8 @@ try {
         'apoderado_nombres' => $in['apoderado_nombres'] !== '' ? mb_strtoupper($in['apoderado_nombres'], 'UTF-8') : '',
         'apoderado_dni'     => $in['apoderado_dni'],
         'apoderado_celular' => $in['apoderado_celular'],
+        'acepta_dj'         => $in['accept_terms'] ? 'SI' : 'NO',
+        'estado'            => 'Pre-inscrito',
         'ip'                => client_ip(),
     ];
 

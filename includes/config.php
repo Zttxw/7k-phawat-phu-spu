@@ -40,7 +40,7 @@ ini_set('error_log', LOG_PATH . '/php-errors.log');
 // Generar el hash con: php -r "echo password_hash('TU_PASSWORD_AQUI', PASSWORD_DEFAULT);"
 // NUNCA guardar la contraseña en texto plano.
 define('ADMIN_USER', 'admin');
-define('ADMIN_PASS_HASH', '$2y$10$REEMPLAZA_ESTE_HASH_GENERADO_CON_PASSWORD_HASH_EN_PHP.');
+define('ADMIN_PASS_HASH', '$2y$12$4wAS803XdMFpmKVv5/vSNuxYUBipwUG9ZG5J4iW1PM3YNFIJVlSxS'); // Password actual: Admin2026
 
 // -----------------------------------------------------------------------------
 // Configuración del evento
@@ -62,9 +62,9 @@ define('SESSION_LIFETIME',          1800);   // 30 min sesión admin
 define('ALLOWED_ORIGINS', [
     'https://tu-dominio.com',
     'https://www.tu-dominio.com',
-    // Descomenta durante desarrollo local:
-    // 'http://localhost',
-    // 'http://127.0.0.1',
+    'http://localhost:8080',
+    'http://localhost',
+    'http://127.0.0.1',
 ]);
 
 // -----------------------------------------------------------------------------

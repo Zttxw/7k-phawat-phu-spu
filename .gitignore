@@ -20,3 +20,4 @@ Thumbs.db
 
 # El HTML monolítico original ya migrado
 /index.html
+/storage/*.lock
