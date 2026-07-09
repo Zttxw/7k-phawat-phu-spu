@@ -130,13 +130,15 @@
     // Mostrar/Ocultar campos de apoderado
     // -------------------------------------------------------------------------
     const edadInput = form.querySelector('[name="edad"]');
-    const catSelect = form.querySelector('[name="categoria"]');
     const fsApoderado = document.getElementById('fs-apoderado');
 
     function toggleApoderado() {
         if (!fsApoderado) return;
         const edad = parseInt(edadInput ? edadInput.value : '0', 10);
-        const cat = catSelect ? catSelect.value : '';
+        
+        // Obtener el radio button seleccionado, no el primero
+        const catSelected = form.querySelector('[name="categoria"]:checked');
+        const cat = catSelected ? catSelected.value : '';
         
         // Es menor si tiene entre 14 y 17 años o si seleccionó categoría juvenil
         const esMenor = (edad >= 14 && edad <= 17) || cat.startsWith('juvenil');
@@ -149,7 +151,11 @@
     }
 
     if (edadInput) edadInput.addEventListener('input', toggleApoderado);
-    if (catSelect) catSelect.addEventListener('change', toggleApoderado);
+    
+    // Escuchar cambios en todos los radio buttons de categoría
+    form.querySelectorAll('[name="categoria"]').forEach(radio => {
+        radio.addEventListener('change', toggleApoderado);
+    });
 
     // -------------------------------------------------------------------------
     // Submit
