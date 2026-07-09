@@ -1,0 +1,15 @@
+Options +SymLinksIfOwnerMatch -Indexes
+
+RewriteEngine On
+RewriteBase /maraton/
+
+# Deny access to private directories directly
+RewriteRule ^(includes|storage|vendor)(/.*)?$ - [F,L]
+
+# If it's the root directory, serve public_html/index.html
+RewriteRule ^$ public_html/ [L]
+
+# Redirect all other requests to public_html/ if the file or directory doesn't exist at the root
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public_html/$1 [L]
