@@ -1481,7 +1481,7 @@
             zoomSnap: 0.1, // Permite niveles de zoom fraccionales para encuadre perfecto
             maxBoundsViscosity: 1.0,
             attributionControl: false // Oculta la atribución de Leaflet
-        });
+        }).setView([-13.535, -71.895], 14);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19
