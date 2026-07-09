@@ -60,8 +60,7 @@ define('SESSION_LIFETIME',          1800);   // 30 min sesión admin
 
 // Orígenes permitidos para CORS/Referer (poner el dominio real en producción)
 define('ALLOWED_ORIGINS', [
-    'https://tu-dominio.com',
-    'https://www.tu-dominio.com',
+    'https://sistema01.munisanjeronimocusco.gob.pe',
     'http://localhost:8080',
     'http://localhost',
     'http://127.0.0.1',
