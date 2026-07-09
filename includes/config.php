@@ -78,23 +78,4 @@ define('VALID_CATEGORIES', [
     'master-mujer'  => ['label' => 'Máster Mujer',  'min' => 40, 'max' => 100],
 ]);
 
-// -----------------------------------------------------------------------------
-// Configuración de sesión segura
-// -----------------------------------------------------------------------------
-function start_secure_session(): void {
-    if (session_status() === PHP_SESSION_ACTIVE) return;
-
-    $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-              || (($_SERVER['SERVER_PORT'] ?? 80) == 443);
-
-    session_set_cookie_params([
-        'lifetime' => 0,
-        'path'     => '/',
-        'domain'   => '',
-        'secure'   => $secure,
-        'httponly' => true,
-        'samesite' => 'Strict',
-    ]);
-    session_name('C7K_SESSION');
-    session_start();
-}
+// (La configuración de sesión se encuentra ahora en security.php)
