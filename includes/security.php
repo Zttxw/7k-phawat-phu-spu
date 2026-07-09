@@ -8,6 +8,23 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
 
+function start_secure_session(): void {
+    if (session_status() === PHP_SESSION_NONE) {
+        $sess_dir = STORAGE_PATH . '/sessions';
+        if (!is_dir($sess_dir)) @mkdir($sess_dir, 0755, true);
+        session_save_path($sess_dir);
+        session_set_cookie_params([
+            'lifetime' => 0,
+            'path' => '/',
+            'domain' => '',
+            'secure' => true,
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
+        session_start();
+    }
+}
+
 // =============================================================================
 // CSRF
 // =============================================================================
