@@ -25,7 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=logos-size-1">
 
     <!-- Tailwind (para producción real, compilar localmente; el CDN es solo para prototipo) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -89,6 +89,7 @@
             <!-- Centro: Menú (Solo Desktop) -->
             <div class="navbar-menu hidden lg:flex">
                 <a href="#hero" class="nav-link active">INICIO</a>
+                <a href="#evento" class="nav-link">EVENTO</a>
                 <a href="#categorias" class="nav-link">CATEGORÍAS</a>
                 <a href="#recorrido" class="nav-link">RECORRIDO</a>
                 <a href="#cronograma" class="nav-link">CRONOGRAMA</a>
@@ -123,9 +124,9 @@
                 <h1 class="hero-date stagger-1" data-kinetic>09</h1>
                 <h1 class="hero-date stagger-2" data-kinetic>AGOSTO</h1>
                 <h1 class="hero-date stagger-3" data-kinetic>2026</h1>
-                <h1 class="hero-date text-[var(--color-primary)] stagger-1" data-kinetic>7K</h1>
-                <h1 class="hero-date stagger-2" data-kinetic>PHAWAY</h1>
-                <h1 class="hero-date stagger-3" data-kinetic>PHU'SPU</h1>
+                <h1 class="hero-date hero-title-highlight hero-title-gold stagger-1" data-kinetic>7K</h1>
+                <h1 class="hero-date hero-title-highlight hero-title-green stagger-2" data-kinetic>PHAWAY</h1>
+                <h1 class="hero-date hero-title-highlight hero-title-teal stagger-3" data-kinetic>PHU'SPU</h1>
             </div>
         </div>
     </section>
@@ -167,8 +168,8 @@
         <!-- Título de la cuenta regresiva -->
         <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 uppercase text-center"
             style="font-family: 'adineuePRO', sans-serif; line-height: 0.95;">
-            LA CONQUISTA DEL <span class="text-brand" style="font-style: italic;">ASFALTO</span><br>
-            <span class="text-brand" style="font-style: italic;">JERONIMIANO</span> COMIENZA EN
+            LA CONQUISTA DEL <span class="brand-gradient" style="font-style: italic;">ASFALTO</span><br>
+            <span class="brand-gradient" style="font-style: italic;">JERONIMIANO</span> COMIENZA EN
         </h2>
 
         <!-- Cronómetro de Ruta (Visual) -->
@@ -254,6 +255,91 @@
 
     </section>
 
+
+    <!-- ============================================================ -->
+    <!-- ABOUT EVENT & OBJECTIVES                                     -->
+    <!-- ============================================================ -->
+    <section id="evento" class="section-darker py-24 tab-content event-overview-section">
+        <div class="max-w-7xl mx-auto px-6 event-overview-container">
+            <div class="event-heading scroll-reveal">
+                <span class="event-eyebrow">Sobre el evento</span>
+                <h2>Acerca de la <span class="brand-gradient">Carrera 7K</span></h2>
+                <p>La Municipalidad Distrital de San Jerónimo organiza esta competencia para promover el deporte, la recreación y los hábitos de vida saludable.</p>
+            </div>
+
+            <div class="event-feature-grid scroll-reveal">
+                <article class="event-feature-card event-feature-card--highlight">
+                    <div class="event-feature-icon event-feature-icon--yellow">
+                        <iconify-icon icon="lucide:target" width="32"></iconify-icon>
+                    </div>
+                    <h3>Finalidad</h3>
+                    <p>Promover el deporte, la recreación y los hábitos de vida saludable en la población. La competencia busca incentivar la práctica del atletismo y la participación activa de jóvenes y adultos, fortaleciendo los valores de integración, compañerismo y sana competencia a través de un recorrido de aproximadamente 7 kilómetros por las principales vías del distrito.</p>
+                </article>
+
+                <article class="event-feature-card event-feature-card--teal">
+                    <div class="event-feature-icon event-feature-icon--blue">
+                        <iconify-icon icon="lucide:building-2" width="32"></iconify-icon>
+                    </div>
+                    <h3>Organización</h3>
+                    <p>La organización, planificación y ejecución estará a cargo de la <strong>Municipalidad Distrital de San Jerónimo</strong>, a través de la <strong>Gerencia de Desarrollo Social</strong>, en coordinación con las unidades orgánicas competentes para la organización técnica, logística, seguridad y atención médica.</p>
+                </article>
+            </div>
+
+            <div class="event-objectives scroll-reveal">
+                <div class="event-module-title">
+                    <div class="event-module-title__line"></div>
+                    <div class="event-module-title__badge">
+                        <iconify-icon icon="lucide:goal" width="24"></iconify-icon>
+                    </div>
+                    <h3>Objetivos del <span class="brand-gradient">Evento</span></h3>
+                    <div class="event-module-title__line"></div>
+                </div>
+                <div class="event-objective-grid">
+                    <article class="event-objective-card">
+                        <span class="event-objective-icon event-objective-icon--yellow">
+                            <iconify-icon icon="lucide:medal" width="26"></iconify-icon>
+                        </span>
+                        <p>Incentivar la participación de niños, jóvenes y adultos fortaleciendo el espíritu de superación.</p>
+                    </article>
+
+                    <article class="event-objective-card event-objective-card--blue">
+                        <span class="event-objective-icon event-objective-icon--blue">
+                            <iconify-icon icon="lucide:heart-pulse" width="26"></iconify-icon>
+                        </span>
+                        <p>Promover la práctica del atletismo como medio para un estilo de vida saludable.</p>
+                    </article>
+
+                    <article class="event-objective-card">
+                        <span class="event-objective-icon event-objective-icon--green">
+                            <iconify-icon icon="lucide:handshake" width="26"></iconify-icon>
+                        </span>
+                        <p>Fomentar valores como el respeto, disciplina, responsabilidad y compañerismo.</p>
+                    </article>
+
+                    <article class="event-objective-card">
+                        <span class="event-objective-icon event-objective-icon--pink">
+                            <iconify-icon icon="lucide:users-round" width="26"></iconify-icon>
+                        </span>
+                        <p>Fortalecer los lazos de integración y confraternidad mediante actividades deportivas.</p>
+                    </article>
+
+                    <article class="event-objective-card">
+                        <span class="event-objective-icon event-objective-icon--orange">
+                            <iconify-icon icon="lucide:trending-up" width="26"></iconify-icon>
+                        </span>
+                        <p>Difundir el deporte como herramienta para el desarrollo integral de la comunidad.</p>
+                    </article>
+
+                    <article class="event-objective-card">
+                        <span class="event-objective-icon event-objective-icon--cyan">
+                            <iconify-icon icon="lucide:shield-check" width="26"></iconify-icon>
+                        </span>
+                        <p>Garantizar una competencia organizada, segura y transparente para todos.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ============================================================ -->
     <!-- CATEGORIES                                                   -->
@@ -1055,13 +1141,13 @@
         <div class="sponsors-group">
             <p class="sponsors-label">Organizan</p>
             <div class="sponsors-row">
-                <img src="assets/images/LOGO GESTIÓN 2023 - ESCUDO DEL CUSCO M.png"
-                    alt="Gestión Cusco - Escudo del Cusco" class="sponsor-logo logo-cusco">
-                <div class="sponsors-divider-vertical"></div>
                 <img src="assets/images/Copia de MDSJ BLANCO.png" alt="Municipalidad Distrital de San Jerónimo"
                     class="sponsor-logo logo-organiza">
                 <div class="sponsors-divider-vertical"></div>
                 <img src="assets/images/LOGO CARRERA.png" alt="Logo Carrera 7K" class="sponsor-logo logo-carrera">
+                <div class="sponsors-divider-vertical"></div>
+                <img src="assets/images/LOGO GESTIÓN 2023 - ESCUDO DEL CUSCO M.png"
+                    alt="Gestión Cusco - Escudo del Cusco" class="sponsor-logo logo-cusco">
             </div>
         </div>
 
@@ -1152,7 +1238,7 @@
     </div>
 
     <!-- Scripts propios (defer para no bloquear parseo) -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=evento-tab-3"></script>
     <script src="assets/js/form.js" defer></script>
 
     <script>

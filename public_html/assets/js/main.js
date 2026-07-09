@@ -128,11 +128,42 @@
     
     const tabMapping = {
         'hero': ['hero', 'hero-countdown'],
+        'evento': ['evento'],
         'categorias': ['categorias'],
         'recorrido': ['recorrido', 'seguridad'],
         'cronograma': ['cronograma'],
         'inscripcion': ['inscripcion', 'bases']
     };
+
+    function showTab(targetId, scrollToTop = true) {
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        document.querySelectorAll(`.nav-link[href="#${targetId}"]`).forEach(nav => nav.classList.add('active'));
+
+        const sectionsToShow = tabMapping[targetId] || [targetId];
+        tabContents.forEach(section => {
+            if (sectionsToShow.includes(section.id)) {
+                section.classList.add('active-tab');
+            } else {
+                section.classList.remove('active-tab');
+            }
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+            const menuBtnIcon = document.querySelector('#mobile-menu-btn iconify-icon');
+            if(menuBtnIcon) menuBtnIcon.setAttribute('icon', 'lucide:menu');
+        }
+
+        if (scrollToTop) {
+            window.scrollTo({top: 0});
+        }
+
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 50);
+    }
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -177,6 +208,17 @@
             }, 50);
         });
     });
+
+    function applyHashTab(scrollToTop = false) {
+        const targetId = window.location.hash.replace('#', '');
+        if (targetId && tabMapping[targetId]) {
+            showTab(targetId, scrollToTop);
+        }
+    }
+
+    applyHashTab(false);
+    window.addEventListener('load', () => applyHashTab(false));
+    window.addEventListener('hashchange', () => applyHashTab(true));
 
     // -------------------------------------------------------------------------
     // Toast helper expuesto globalmente
