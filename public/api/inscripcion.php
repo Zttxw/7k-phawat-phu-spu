@@ -88,6 +88,7 @@ $in = [
     'apoderado_nombres' => clean_string($_POST['apoderado_nombres'] ?? '', 120),
     'apoderado_dni'     => clean_string($_POST['apoderado_dni'] ?? '', 8),
     'apoderado_celular' => clean_string($_POST['apoderado_celular'] ?? '', 9),
+    'salud'             => clean_string($_POST['salud'] ?? '', 10),
     'accept_terms'      => ($_POST['accept_terms'] ?? '') === 'on',
 ];
 
@@ -130,6 +131,10 @@ if (!isset(VALID_CATEGORIES[$in['categoria']])) {
 
 if (!$in['accept_terms']) {
     $errors['accept_terms'] = 'Debe aceptar la declaración jurada.';
+}
+
+if ($in['salud'] !== 'ok' && $in['salud'] !== 'anexos') {
+    $errors['salud'] = 'Debe seleccionar una opción de salud válida.';
 }
 
 // Menores: apoderado obligatorio
@@ -188,7 +193,7 @@ try {
         'apoderado_nombres' => $in['apoderado_nombres'] !== '' ? mb_strtoupper($in['apoderado_nombres'], 'UTF-8') : '',
         'apoderado_dni'     => $in['apoderado_dni'],
         'apoderado_celular' => $in['apoderado_celular'],
-        'acepta_dj'         => $in['accept_terms'] ? 'SI' : 'NO',
+        'acepta_dj'         => $in['accept_terms'] ? 'SI (' . (($in['salud'] === 'ok') ? 'Buena Salud, No Anexos' : 'Presentará Anexos') . ')' : 'NO',
         'estado'            => 'Pre-inscrito',
         'ip'                => client_ip(),
     ];
@@ -199,9 +204,13 @@ try {
 
     security_log('inscripcion_ok', ['id' => $result['id'], 'dni' => $in['dni']]);
 
+    $msg = ($in['salud'] === 'ok') 
+        ? '¡Inscripción registrada exitosamente! Solo debes traer tu DNI para recoger tu kit.'
+        : '¡Inscripción registrada exitosamente! Recuerda traer tus Anexos firmados y tu DNI para recoger tu kit.';
+
     json_response([
         'success' => true,
-        'message' => '¡Pre-inscripción registrada exitosamente! Confirme presencialmente en Protalento con su documentación.',
+        'message' => $msg,
         'id'      => $result['id'],
     ], 200);
 

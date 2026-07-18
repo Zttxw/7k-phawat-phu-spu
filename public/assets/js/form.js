@@ -93,6 +93,7 @@
         check('departamento', validators.texto(fd.get('departamento') || ''),
               'Departamento requerido.');
         check('categoria', !!fd.get('categoria'), 'Seleccione una categoría.');
+        check('salud', !!fd.get('salud'), 'Seleccione una opción de salud.');
 
         // Si es menor de edad (< 18), los datos del apoderado son obligatorios
         const edad = parseInt(fd.get('edad') || '0', 10);
@@ -169,7 +170,7 @@
 
         // Honeypot: si tiene contenido, es bot — silenciosamente "aceptar" sin enviar
         if ((fd.get('website') || '').trim() !== '') {
-            window.showToast('¡Pre-inscripción enviada!', 'success');
+            window.showToast('¡Inscripción enviada!', 'success');
             form.reset();
             return;
         }
@@ -206,7 +207,7 @@
 
             if (res.ok && data.success) {
                 window.showToast(
-                    data.message || '¡Pre-inscripción registrada!',
+                    data.message || '¡Inscripción registrada!',
                     'success'
                 );
                 

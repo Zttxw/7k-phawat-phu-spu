@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-    window.onerror = function(msg, url, line) {
-        alert("Error JS en línea " + line + ":\n" + msg);
-    };
+        window.onerror = function (msg, url, line) {
+            alert("Error JS en línea " + line + ":\n" + msg);
+        };
     </script>
     <meta name="description"
         content="Carrera 7K Phaway Phu'spu — San Jerónimo, Cusco. Inscripción gratuita. Agosto 2026.">
@@ -66,7 +66,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/Copia de ESCUDO COLOR.png">
-    
+
     <!-- Iconify (íconos ligeros, se cargan por demanda) -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
 </head>
@@ -98,6 +98,7 @@
                 <a href="#categorias" class="nav-link">CATEGORÍAS</a>
                 <a href="#recorrido" class="nav-link">RECORRIDO</a>
                 <a href="#cronograma" class="nav-link">CRONOGRAMA</a>
+                <a href="#kits" class="nav-link">KITS</a>
                 <a href="#inscripcion" class="nav-link">INSCRIPCIÓN</a>
             </div>
 
@@ -114,22 +115,34 @@
     <!-- ============================================================ -->
     <!-- MOBILE MENU                                                  -->
     <!-- ============================================================ -->
-    <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 top-[70px] bg-race-dark/95 backdrop-blur-md z-[999] flex flex-col items-center justify-start pt-8 px-6 gap-5 transition-all">
-        <a href="#hero" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Inicio</a>
-        <a href="#evento" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Evento</a>
-        <a href="#categorias" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Categorías</a>
-        <a href="#recorrido" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Recorrido</a>
-        <a href="#cronograma" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Cronograma</a>
-        <a href="#inscripcion" class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Inscripción</a>
-        
+    <div id="mobile-menu"
+        class="hidden lg:hidden fixed inset-0 top-[70px] bg-race-dark/95 backdrop-blur-md z-[999] flex flex-col items-center justify-start pt-8 px-6 gap-5 transition-all">
+        <a href="#hero"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Inicio</a>
+        <a href="#evento"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Evento</a>
+        <a href="#categorias"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Categorías</a>
+        <a href="#recorrido"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Recorrido</a>
+        <a href="#cronograma"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Cronograma</a>
+        <a href="#kits"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Kits</a>
+        <a href="#inscripcion"
+            class="text-white text-lg font-bold uppercase tracking-widest hover:text-race-yellow transition-colors mobile-nav-link">Inscripción</a>
+
         <div class="flex gap-6 mt-6 pt-6 border-t border-white/10">
-            <a href="https://www.facebook.com/Municipalidaddesanjeronimo/?locale=es_LA" target="_blank" class="text-white hover:text-race-yellow transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/Municipalidaddesanjeronimo/?locale=es_LA" target="_blank"
+                class="text-white hover:text-race-yellow transition-colors" aria-label="Facebook">
                 <iconify-icon icon="fa6-brands:facebook-f" width="20"></iconify-icon>
             </a>
-            <a href="https://www.instagram.com/sanjeronimocusco/" target="_blank" class="text-white hover:text-race-yellow transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/sanjeronimocusco/" target="_blank"
+                class="text-white hover:text-race-yellow transition-colors" aria-label="Instagram">
                 <iconify-icon icon="fa6-brands:instagram" width="22"></iconify-icon>
             </a>
-            <a href="https://www.tiktok.com/@sanjeronimocusco" target="_blank" class="text-white hover:text-race-yellow transition-colors" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@sanjeronimocusco" target="_blank"
+                class="text-white hover:text-race-yellow transition-colors" aria-label="TikTok">
                 <iconify-icon icon="fa6-brands:tiktok" width="20"></iconify-icon>
             </a>
         </div>
@@ -252,30 +265,47 @@
         </div>
 
         <!-- Guía de 3 pasos (Movida al Inicio) -->
-        <div class="mt-8 bg-black/40 rounded-2xl p-6 sm:p-10 border border-white/10 shadow-2xl relative overflow-hidden scroll-reveal">
+        <div
+            class="mt-8 bg-black/40 rounded-2xl p-6 sm:p-10 border border-white/10 shadow-2xl relative overflow-hidden scroll-reveal">
             <div class="absolute top-0 right-0 w-40 h-40 bg-race-yellow/10 rounded-full blur-3xl"></div>
-            <h4 class="text-2xl md:text-3xl font-bold mb-10 text-center text-white font-oswald uppercase tracking-wide">¿Cómo asegurar tu cupo en 3 pasos?</h4>
+            <h4 class="text-2xl md:text-3xl font-bold mb-10 text-center text-white font-oswald uppercase tracking-wide">
+                ¿Cómo asegurar tu cupo en 3 pasos?</h4>
             <div class="grid sm:grid-cols-3 gap-8 relative z-10">
                 <div class="text-center relative">
-                    <div class="w-16 h-16 bg-race-yellow text-[#111] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-black shadow-[0_0_20px_rgba(240,200,79,0.4)]">1</div>
-                    <h5 class="font-bold text-white mb-3 text-base uppercase tracking-wide">Pre-Inscríbete Online</h5>
-                    <p class="text-sm text-white/60 leading-relaxed">Ve a la sección de Inscripción y llena el formulario web para reservar tu cupo rápidamente.</p>
+                    <div
+                        class="w-16 h-16 bg-race-yellow text-[#111] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-black shadow-[0_0_20px_rgba(240,200,79,0.4)]">
+                        1</div>
+                    <h5 class="font-bold text-white mb-3 text-base uppercase tracking-wide">Inscríbete Online</h5>
+                    <p class="text-sm text-white/60 leading-relaxed">Ve a la sección de Inscripción y llena el
+                        formulario web para reservar tu cupo rápidamente.</p>
                 </div>
                 <div class="text-center relative">
                     <!-- Flecha conectora (solo desktop) -->
-                    <div class="hidden sm:block absolute top-8 left-[-20%] w-[40%] h-[2px] bg-gradient-to-r from-race-yellow/50 to-transparent border-t border-dashed border-race-yellow/30"></div>
-                    
-                    <div class="w-16 h-16 bg-race-yellow text-[#111] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-black shadow-[0_0_20px_rgba(240,200,79,0.4)]">2</div>
-                    <h5 class="font-bold text-white mb-3 text-base uppercase tracking-wide">Prepara tus Documentos</h5>
-                    <p class="text-sm text-white/60 leading-relaxed">Descarga e imprime los Anexos. Llénalos y fírmalos. <strong class="text-race-yellow">Menores:</strong> Debe firmar el Padre o Apoderado.</p>
+                    <div
+                        class="hidden sm:block absolute top-8 left-[-20%] w-[40%] h-[2px] bg-gradient-to-r from-race-yellow/50 to-transparent border-t border-dashed border-race-yellow/30">
+                    </div>
+
+                    <div
+                        class="w-16 h-16 bg-race-yellow text-[#111] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-black shadow-[0_0_20px_rgba(240,200,79,0.4)]">
+                        2</div>
+                    <h5 class="font-bold text-white mb-3 text-base uppercase tracking-wide">Aporte Solidario (Opcional)
+                    </h5>
+                    <p class="text-sm text-white/60 leading-relaxed">Te invitamos a sumarte trayendo alimentos no
+                        perecibles. Lo recaudado será destinado a ayudar a las personas de la tercera edad de nuestra
+                        comunidad.</p>
                 </div>
                 <div class="text-center relative">
                     <!-- Flecha conectora (solo desktop) -->
-                    <div class="hidden sm:block absolute top-8 left-[-20%] w-[40%] h-[2px] bg-gradient-to-r from-race-yellow/50 to-transparent border-t border-dashed border-race-yellow/30"></div>
-                    
-                    <div class="w-16 h-16 bg-race-yellow text-[#111] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-black shadow-[0_0_20px_rgba(240,200,79,0.4)]">3</div>
-                    <h5 class="font-bold text-white mb-3 text-base uppercase tracking-wide">Confirma Presencial</h5>
-                    <p class="text-sm text-white/60 leading-relaxed">Lleva tus Anexos y copia de DNI a la Casa de la Cultura (Proyecto Protalento) para oficializar tu inscripción.</p>
+                    <div
+                        class="hidden sm:block absolute top-8 left-[-20%] w-[40%] h-[2px] bg-gradient-to-r from-race-yellow/50 to-transparent border-t border-dashed border-race-yellow/30">
+                    </div>
+
+                    <div
+                        class="w-16 h-16 bg-race-yellow text-[#111] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl font-black shadow-[0_0_20px_rgba(240,200,79,0.4)]">
+                        3</div>
+                    <h5 class="font-bold text-white mb-3 text-base uppercase tracking-wide">Entrega de Kits</h5>
+                    <p class="text-sm text-white/60 leading-relaxed">Acércate a la Casa de la Cultura con tu DNI físico
+                        (y Anexos firmados, solo si los requieres) para validar tu inscripción y recoger tu kit.</p>
                 </div>
             </div>
         </div>
@@ -291,7 +321,8 @@
             <div class="event-heading scroll-reveal">
                 <span class="event-eyebrow">Sobre el evento</span>
                 <h2>Acerca de la <span class="brand-gradient">Carrera 7K</span></h2>
-                <p>La Municipalidad Distrital de San Jerónimo organiza esta competencia para promover el deporte, la recreación y los hábitos de vida saludable.</p>
+                <p>La Municipalidad Distrital de San Jerónimo organiza esta competencia para promover el deporte, la
+                    recreación y los hábitos de vida saludable.</p>
             </div>
 
             <div class="event-feature-grid scroll-reveal">
@@ -300,7 +331,10 @@
                         <iconify-icon icon="lucide:target" width="32"></iconify-icon>
                     </div>
                     <h3>Finalidad</h3>
-                    <p>Promover el deporte, la recreación y los hábitos de vida saludable en la población. La competencia busca incentivar la práctica del atletismo y la participación activa de jóvenes y adultos, fortaleciendo los valores de integración, compañerismo y sana competencia a través de un recorrido de aproximadamente 7 kilómetros por las principales vías del distrito.</p>
+                    <p>Promover el deporte, la recreación y los hábitos de vida saludable en la población. La
+                        competencia busca incentivar la práctica del atletismo y la participación activa de jóvenes y
+                        adultos, fortaleciendo los valores de integración, compañerismo y sana competencia a través de
+                        un recorrido de aproximadamente 7 kilómetros por las principales vías del distrito.</p>
                 </article>
 
                 <article class="event-feature-card event-feature-card--teal">
@@ -308,7 +342,10 @@
                         <iconify-icon icon="lucide:building-2" width="32"></iconify-icon>
                     </div>
                     <h3>Organización</h3>
-                    <p>La organización, planificación y ejecución estará a cargo de la <strong>Municipalidad Distrital de San Jerónimo</strong>, a través de la <strong>Gerencia de Desarrollo Social</strong>, en coordinación con las unidades orgánicas competentes para la organización técnica, logística, seguridad y atención médica.</p>
+                    <p>La organización, planificación y ejecución estará a cargo de la <strong>Municipalidad Distrital
+                            de San Jerónimo</strong>, a través de la <strong>Gerencia de Desarrollo Social</strong>, en
+                        coordinación con las unidades orgánicas competentes para la organización técnica, logística,
+                        seguridad y atención médica.</p>
                 </article>
             </div>
 
@@ -326,7 +363,8 @@
                         <span class="event-objective-icon event-objective-icon--yellow">
                             <iconify-icon icon="lucide:medal" width="26"></iconify-icon>
                         </span>
-                        <p>Incentivar la participación de niños, jóvenes y adultos fortaleciendo el espíritu de superación.</p>
+                        <p>Incentivar la participación de niños, jóvenes y adultos fortaleciendo el espíritu de
+                            superación.</p>
                     </article>
 
                     <article class="event-objective-card event-objective-card--blue">
@@ -486,11 +524,13 @@
                         </div>
                     </div>
                     <!-- Botón de Cerrar Modal (oculto por defecto) -->
-                    <button id="closeMapBtn" class="hidden absolute top-4 right-4 bg-race-red hover:bg-white hover:text-race-red text-white w-10 h-10 rounded-full flex items-center justify-center z-[2000] transition-colors border border-white/20 pointer-events-auto shadow-2xl">
+                    <button id="closeMapBtn"
+                        class="hidden absolute top-4 right-4 bg-race-red hover:bg-white hover:text-race-red text-white w-10 h-10 rounded-full flex items-center justify-center z-[2000] transition-colors border border-white/20 pointer-events-auto shadow-2xl">
                         <iconify-icon icon="lucide:x" width="20"></iconify-icon>
                     </button>
                     <!-- Botón para ver en pantalla completa -->
-                    <button id="expandMapBtn" class="absolute bottom-[60px] right-4 bg-[#111] hover:bg-race-yellow hover:text-[#111] text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 z-[1000] transition-colors border border-white/10 pointer-events-auto shadow-xl">
+                    <button id="expandMapBtn"
+                        class="absolute bottom-[60px] right-4 bg-[#111] hover:bg-race-yellow hover:text-[#111] text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 z-[1000] transition-colors border border-white/10 pointer-events-auto shadow-xl">
                         <iconify-icon icon="lucide:maximize" width="16"></iconify-icon> Ver versión ampliada
                     </button>
                     <div class="absolute top-[60px] left-4 right-4 flex justify-between z-[1000] pointer-events-none">
@@ -574,6 +614,82 @@
     </section>
 
     <!-- ============================================================ -->
+    <!-- KITS                                                         -->
+    <!-- ============================================================ -->
+    <section id="kits" class="section-dark py-24 tab-content">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span
+                    class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Equipamiento
+                    Oficial</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Kit de <span
+                        class="gradient-text">Entrega</span></h2>
+                <p class="text-white/50 mt-4 max-w-2xl mx-auto">Conoce todo lo que incluye tu inscripción gratuita y los
+                    detalles para recoger tu kit antes de la carrera.</p>
+            </div>
+
+            <!-- 3 Items del Kit con imágenes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 scroll-reveal">
+                <!-- Polo -->
+                <div
+                    class="gold-border p-6 bg-white/[0.02] rounded-2xl flex flex-col items-center text-center hover:bg-white/[0.04] transition-colors">
+                    <img src="assets/images/Polo referencial.png" alt="Polo Oficial"
+                        class="h-40 object-contain mb-6 drop-shadow-xl">
+                    <h4 class="text-xl font-bold text-white mb-2">Polo Oficial</h4>
+                    <p class="text-white/60 text-sm">Polo técnico de la Carrera 7K (Sujeto a disponibilidad).</p>
+                </div>
+                <!-- Dorsal -->
+                <div
+                    class="gold-border p-6 bg-white/[0.02] rounded-2xl flex flex-col items-center text-center hover:bg-white/[0.04] transition-colors">
+                    <img src="assets/images/dorsal.png" alt="Número de Dorsal"
+                        class="h-40 object-contain mb-6 drop-shadow-xl">
+                    <h4 class="text-xl font-bold text-white mb-2">Número de Dorsal</h4>
+                    <p class="text-white/60 text-sm">Identificador único para tu participación y control de tiempos.</p>
+                </div>
+                <!-- Botella -->
+                <div
+                    class="gold-border p-6 bg-white/[0.02] rounded-2xl flex flex-col items-center text-center hover:bg-white/[0.04] transition-colors">
+                    <img src="assets/images/botella de agua.webp" alt="Botella de Agua"
+                        class="h-40 object-contain mb-6 drop-shadow-xl">
+                    <h4 class="text-xl font-bold text-white mb-2">Botella de Agua</h4>
+                    <p class="text-white/60 text-sm">Hidratación esencial para rendir al máximo durante la ruta.</p>
+                </div>
+            </div>
+
+            <!-- Info de Entrega -->
+            <div class="max-w-3xl mx-auto scroll-reveal">
+                <div
+                    class="gold-border p-8 bg-white/[0.02] rounded-2xl flex flex-col relative overflow-hidden text-center items-center">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-race-yellow/10 rounded-full blur-3xl"></div>
+                    <div
+                        class="w-16 h-16 rounded-full bg-race-yellow text-[#111] flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(240,200,79,0.3)] z-10">
+                        <iconify-icon icon="lucide:map-pin" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold font-oswald uppercase tracking-tight mb-4 z-10">Lugar de Entrega</h3>
+                    <p class="text-white/70 mb-6 text-sm leading-relaxed z-10 max-w-lg">
+                        Acércate con tu DNI físico (y anexos si los indicaste en tu registro) para oficializar tu participación y recibir tu kit de competidor.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full z-10">
+                        <div class="flex-1 bg-[#111] rounded-xl p-5 border border-white/10 text-left">
+                            <p class="text-xs text-race-yellow font-bold uppercase tracking-wider mb-1">Ubicación</p>
+                            <p class="text-white font-medium">Casa de la Cultura (Proyecto Protalento)</p>
+                            <p class="text-white/50 text-xs mt-1">San Jerónimo, Cusco</p>
+                        </div>
+                        <div class="flex-1 bg-[#111] rounded-xl p-5 border border-white/10 text-left">
+                            <p class="text-xs text-race-blue-light font-bold uppercase tracking-wider mb-1">Requisitos
+                                para recoger</p>
+                            <ul class="text-white/80 text-sm list-disc pl-4 mt-2 space-y-1">
+                                <li>DNI original y físico</li>
+                                <li>Anexos impresos y firmados <span class="text-race-yellow/80 text-xs ml-1">(Solo si marcaste esta opción)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
     <!-- REGISTRATION                                                 -->
     <!-- ============================================================ -->
     <section id="inscripcion" class="section-darker py-24 tab-content">
@@ -590,284 +706,325 @@
             <!-- Registration Form Separated -->
             <div class="max-w-4xl mx-auto mb-16 scroll-reveal">
                 <div class="gold-border p-8 bg-white/[0.02]">
-                        <div class="hidden">
-                            <!-- Se movió la guía de 3 pasos al inicio de la página -->
-                        </div>
-
-                        <div class="text-center mb-8 mt-12 relative">
-                            <span class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-widest text-race-yellow mb-3">PASO 1</span>
-                            <h3 class="text-3xl font-bold font-oswald uppercase tracking-tight">Pre-Inscripción Online</h3>
-                        </div>
-
-                        <form id="registrationForm" autocomplete="on">
-                            <!-- CSRF token (poblado por JS al cargar) -->
-                            <input type="hidden" name="csrf_token" value="">
-
-                            <!-- Honeypot anti-bot: los humanos no lo ven ni lo llenan -->
-                            <div class="hp-field" aria-hidden="true">
-                                <label>No llenar</label>
-                                <input type="text" name="website" tabindex="-1" autocomplete="off">
-                            </div>
-
-                            <!-- Datos del Participante -->
-                            <fieldset class="mb-8">
-                                <legend
-                                    class="text-sm font-semibold text-race-yellow uppercase tracking-wider mb-5 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:user" width="16"></iconify-icon> Datos del Participante
-                                </legend>
-                                <div class="grid sm:grid-cols-2 gap-4">
-                                    <div class="sm:col-span-2">
-                                        <label class="form-label" for="in-nombres">Apellidos y Nombres completos
-                                            *</label>
-                                        <input id="in-nombres" name="nombres_completos" type="text" class="form-input"
-                                            placeholder="Ej: GARCÍA PÉREZ, Juan Carlos" required maxlength="120"
-                                            autocomplete="name">
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-dni">N° de DNI *</label>
-                                        <input id="in-dni" name="dni" type="text" class="form-input"
-                                            placeholder="00000000" maxlength="8" required pattern="[0-9]{8}"
-                                            inputmode="numeric" data-only-digits autocomplete="off">
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-edad">Edad *</label>
-                                        <input id="in-edad" name="edad" type="number" class="form-input"
-                                            placeholder="Ej: 25" min="14" max="100" required inputmode="numeric" data-only-digits>
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-cel">N° de Celular *</label>
-                                        <input id="in-cel" name="celular" type="tel" class="form-input"
-                                            placeholder="Ej: 984000000" maxlength="9" required pattern="9[0-9]{8}"
-                                            inputmode="numeric" data-only-digits autocomplete="tel">
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-dom">Domicilio</label>
-                                        <input id="in-dom" name="domicilio" type="text" class="form-input"
-                                            placeholder="Dirección completa" maxlength="150"
-                                            autocomplete="street-address">
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-dist">Distrito *</label>
-                                        <input id="in-dist" name="distrito" type="text" class="form-input"
-                                            placeholder="Ej: San Jerónimo" required maxlength="60">
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-prov">Provincia *</label>
-                                        <input id="in-prov" name="provincia" type="text" class="form-input"
-                                            placeholder="Ej: Cusco" required maxlength="60">
-                                    </div>
-                                    <div class="sm:col-span-2">
-                                        <label class="form-label" for="in-dep">Departamento *</label>
-                                        <input id="in-dep" name="departamento" type="text" class="form-input"
-                                            placeholder="Ej: Cusco" value="Cusco" required maxlength="60">
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <!-- Datos del Apoderado (menores) -->
-                            <fieldset id="fs-apoderado" class="mb-8 p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hidden fade-in">
-                                <legend
-                                    class="text-sm font-semibold text-race-blue-light uppercase tracking-wider mb-5 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon> Datos del Apoderado
-                                    (Obligatorio para menores)
-                                </legend>
-                                <div class="grid sm:grid-cols-2 gap-4">
-                                    <div class="sm:col-span-2">
-                                        <label class="form-label" for="in-ap-nom">Nombre y Apellido del
-                                            Padre/Apoderado *</label>
-                                        <input id="in-ap-nom" name="apoderado_nombres" type="text" class="form-input"
-                                            placeholder="Ej: PÉREZ, Luis"
-                                            maxlength="120">
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-ap-dni">DNI del Apoderado *</label>
-                                        <input id="in-ap-dni" name="apoderado_dni" type="text" class="form-input"
-                                            placeholder="00000000" maxlength="8" pattern="[0-9]{8}" inputmode="numeric"
-                                            data-only-digits>
-                                    </div>
-                                    <div>
-                                        <label class="form-label" for="in-ap-cel">Celular del Apoderado *</label>
-                                        <input id="in-ap-cel" name="apoderado_celular" type="tel" class="form-input"
-                                            placeholder="984000000" maxlength="9" pattern="9[0-9]{8}"
-                                            inputmode="numeric" data-only-digits>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <!-- Categoría -->
-                            <fieldset class="mb-8">
-                                <legend
-                                    class="text-sm font-semibold text-race-green uppercase tracking-wider mb-5 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:tag" width="16"></iconify-icon> Selección de Categoría *
-                                </legend>
-                                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                    <label
-                                        class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-blue-light/30 transition-all">
-                                        <input type="radio" name="categoria" value="juvenil-varon"
-                                            class="w-4 h-4 accent-blue-500" required>
-                                        <div>
-                                            <div class="text-sm font-semibold">Juvenil Varón</div>
-                                            <div class="text-xs text-white/40">14 a 17 años</div>
-                                        </div>
-                                    </label>
-                                    <label
-                                        class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-blue-light/30 transition-all">
-                                        <input type="radio" name="categoria" value="juvenil-mujer"
-                                            class="w-4 h-4 accent-blue-500">
-                                        <div>
-                                            <div class="text-sm font-semibold">Juvenil Mujer</div>
-                                            <div class="text-xs text-white/40">14 a 17 años</div>
-                                        </div>
-                                    </label>
-                                    <label
-                                        class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-green/30 transition-all">
-                                        <input type="radio" name="categoria" value="libre-varon"
-                                            class="w-4 h-4 accent-green-500">
-                                        <div>
-                                            <div class="text-sm font-semibold">Libre Varón</div>
-                                            <div class="text-xs text-white/40">18 a 39 años</div>
-                                        </div>
-                                    </label>
-                                    <label
-                                        class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-green/30 transition-all">
-                                        <input type="radio" name="categoria" value="libre-mujer"
-                                            class="w-4 h-4 accent-green-500">
-                                        <div>
-                                            <div class="text-sm font-semibold">Libre Mujer</div>
-                                            <div class="text-xs text-white/40">18 a 39 años</div>
-                                        </div>
-                                    </label>
-                                    <label
-                                        class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-yellow/30 transition-all">
-                                        <input type="radio" name="categoria" value="master-varon"
-                                            class="w-4 h-4 accent-yellow-500">
-                                        <div>
-                                            <div class="text-sm font-semibold">Máster Varón</div>
-                                            <div class="text-xs text-white/40">40 a más años</div>
-                                        </div>
-                                    </label>
-                                    <label
-                                        class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-yellow/30 transition-all">
-                                        <input type="radio" name="categoria" value="master-mujer"
-                                            class="w-4 h-4 accent-yellow-500">
-                                        <div>
-                                            <div class="text-sm font-semibold">Máster Mujer</div>
-                                            <div class="text-xs text-white/40">40 a más años</div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <!-- Declaración Jurada -->
-                            <fieldset class="mb-8">
-                                <legend
-                                    class="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                                    <iconify-icon icon="lucide:scroll-text" width="16"></iconify-icon> Declaración
-                                    Jurada
-                                </legend>
-                                <div
-                                    class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] max-h-40 overflow-y-auto text-white/50 text-xs leading-relaxed">
-                                    <p class="mb-3">Yo, [participante], identificado(a) con DNI N° [DNI], acepto las
-                                        condiciones establecidas por la comisión organizadora de la Carrera 7K "Phaway
-                                        Phu´spu", así como el reglamento y/o bases bajo las cuales se desarrollará la
-                                        presente competencia deportiva.</p>
-                                    <p class="mb-3">Asimismo, al momento de realizar mi inscripción, declaro asumir
-                                        voluntariamente mi participación en el evento, deslindando de responsabilidad
-                                        civil y penal a los organizadores ante cualquier consecuencia derivada de mi
-                                        participación que pueda afectar mi integridad física o salud, reconociendo que
-                                        la práctica deportiva requiere preparación y esfuerzo físico.</p>
-                                    <p>Declaro conocer que la Carrera 7K "Phaway Phu´spu" es una competencia que exige
-                                        condiciones físicas adecuadas, manifestando que me encuentro apto(a),
-                                        preparado(a) y en condiciones de participar, asumiendo la responsabilidad
-                                        correspondiente durante el desarrollo del evento.</p>
-                                </div>
-                                <label class="flex items-start gap-3 mt-4 cursor-pointer">
-                                    <input type="checkbox" name="accept_terms" id="acceptTerms"
-                                        class="w-4 h-4 mt-0.5 accent-yellow-500" required>
-                                    <span class="text-sm text-white/60">Acepto las condiciones, el reglamento de la
-                                        carrera y las bases establecidas. Declaro encontrarme apto(a) físicamente para
-                                        participar. (<strong class="text-white/80">Obligatorio</strong>)</span>
-                                </label>
-                            </fieldset>
-
-                            <button type="submit" id="submitBtn"
-                                class="btn-primary w-full justify-center text-lg py-4 opacity-50 cursor-not-allowed"
-                                disabled>
-                                <iconify-icon icon="lucide:send" width="20"></iconify-icon>
-                                Enviar Pre-Inscripción
-                            </button>
-                            <p class="text-center text-white/30 text-xs mt-4">
-                                Nota: Esta pre-inscripción debe ser confirmada presencialmente en la oficina de
-                                Protalento presentando la documentación requerida.
-                            </p>
-                        </form>
-
-                        <!-- Mensaje de Éxito (Oculto por defecto) -->
-                        <div id="registrationSuccess" class="hidden flex flex-col items-center justify-center py-12 text-center fade-in">
-                            <div class="w-20 h-20 bg-race-green/20 rounded-full flex items-center justify-center mb-6">
-                                <iconify-icon icon="lucide:check-circle" class="text-race-green text-5xl"></iconify-icon>
-                            </div>
-                            <h3 class="text-3xl font-bold mb-4 text-white">¡Inscripción Exitosa!</h3>
-                            <p class="text-white/70 mb-8 text-lg max-w-md mx-auto">
-                                Tu pre-inscripción ha sido registrada correctamente. Por favor, confirma presencialmente en las oficinas con tu documentación.
-                            </p>
-                            <button type="button" onclick="window.location.reload()" class="bg-race-yellow text-race-dark px-8 py-3 rounded-full font-bold hover:bg-white transition-colors uppercase tracking-wide">
-                                Entendido
-                            </button>
-                        </div>
+                    <div class="hidden">
+                        <!-- Se movió la guía de 3 pasos al inicio de la página -->
                     </div>
-                </div>
-            </div>
-            
-            <!-- Requisitos Separados (Movidos debajo del formulario) -->
-            <div class="max-w-3xl mx-auto scroll-reveal">
-                <div class="glass-card p-10 border-t-4 border-t-[#4ADE80] relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-[#4ADE80]/10 rounded-full blur-3xl"></div>
-                    <div class="text-center mb-8 relative z-10">
-                        <span class="inline-block px-4 py-1 rounded-full bg-[#4ADE80]/10 border border-[#4ADE80]/20 text-xs font-bold tracking-widest text-[#4ADE80] mb-3">PASO 2</span>
-                        <h3 class="text-2xl font-bold font-oswald uppercase tracking-tight flex items-center justify-center gap-3">Prepara tus Documentos</h3>
-                        <p class="text-white/60 text-sm mt-3">Descarga los anexos, imprímelos y llénalos con letra clara.</p>
+
+                    <div class="text-center mb-8 mt-12 relative">
+                        <span
+                            class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-widest text-race-yellow mb-3">PASO
+                            1</span>
+                        <h3 class="text-3xl font-bold font-oswald uppercase tracking-tight">Inscripción Online</h3>
                     </div>
-                    
-                    <div class="bg-black/30 rounded-xl p-6 border border-white/5 mb-8 relative z-10">
-                        <ul class="space-y-5">
-                            <li class="flex items-start gap-4 text-white/90">
-                                <iconify-icon icon="lucide:check-circle" width="24" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon> 
-                                <span class="text-lg">Copia simple del <strong>DNI</strong></span>
-                            </li>
-                            <li class="flex items-start gap-4 text-white/90">
-                                <iconify-icon icon="lucide:check-circle" width="24" style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+
+                    <form id="registrationForm" autocomplete="on">
+                        <!-- CSRF token (poblado por JS al cargar) -->
+                        <input type="hidden" name="csrf_token" value="">
+
+                        <!-- Honeypot anti-bot: los humanos no lo ven ni lo llenan -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label>No llenar</label>
+                            <input type="text" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <!-- Datos del Participante -->
+                        <fieldset class="mb-8">
+                            <legend
+                                class="text-sm font-semibold text-race-yellow uppercase tracking-wider mb-5 flex items-center gap-2">
+                                <iconify-icon icon="lucide:user" width="16"></iconify-icon> Datos del Participante
+                            </legend>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="form-label" for="in-nombres">Apellidos y Nombres completos
+                                        *</label>
+                                    <input id="in-nombres" name="nombres_completos" type="text" class="form-input"
+                                        placeholder="Ej: MERMA CHURA, ANTHONY AXEL" required maxlength="120"
+                                        autocomplete="name">
+                                </div>
                                 <div>
-                                    <strong class="text-lg">Formato Único de Inscripción</strong> (Impreso y llenado) que incluye:
-                                    <ul class="pl-2 mt-4 space-y-3 text-white/70">
-                                        <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-[#4ADE80]/70"></div> Ficha de Inscripción (Anexo 01)</li>
-                                        <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-[#4ADE80]/70"></div> Declaración Jurada de Salud (Anexo 02)</li>
-                                        <li class="flex items-center gap-3"><div class="w-2 h-2 rounded-full bg-[#4ADE80]/70"></div> Deslinde de Responsabilidades (Anexo 03)</li>
-                                    </ul>
+                                    <label class="form-label" for="in-dni">N° de DNI *</label>
+                                    <input id="in-dni" name="dni" type="text" class="form-input" placeholder="00000000"
+                                        maxlength="8" required pattern="[0-9]{8}" inputmode="numeric" data-only-digits
+                                        autocomplete="off">
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <a href="assets/docs/ficha-inscripcion.pdf?v=3" target="_blank" class="relative z-10 w-full bg-white/5 hover:bg-[#4ADE80] hover:text-[#111] text-white font-bold text-lg py-5 rounded-xl flex justify-center items-center gap-3 transition-colors border border-[#4ADE80]/30 uppercase tracking-wide">
-                        <iconify-icon icon="lucide:download" width="24"></iconify-icon> Descargar Anexos en PDF
-                    </a>
-                </div>
-            </div>
+                                <div>
+                                    <label class="form-label" for="in-edad">Edad *</label>
+                                    <input id="in-edad" name="edad" type="number" class="form-input"
+                                        placeholder="Ej: 25" min="14" max="100" required inputmode="numeric"
+                                        data-only-digits>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="in-cel">N° de Celular *</label>
+                                    <input id="in-cel" name="celular" type="tel" class="form-input"
+                                        placeholder="Ej: 984000000" maxlength="9" required pattern="9[0-9]{8}"
+                                        inputmode="numeric" data-only-digits autocomplete="tel">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="in-dom">Domicilio</label>
+                                    <input id="in-dom" name="domicilio" type="text" class="form-input"
+                                        placeholder="Dirección completa" maxlength="150" autocomplete="street-address">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="in-dist">Distrito *</label>
+                                    <input id="in-dist" name="distrito" type="text" class="form-input"
+                                        placeholder="Ej: San Jerónimo" required maxlength="60">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="in-prov">Provincia *</label>
+                                    <input id="in-prov" name="provincia" type="text" class="form-input"
+                                        placeholder="Ej: Cusco" required maxlength="60">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="form-label" for="in-dep">Departamento *</label>
+                                    <input id="in-dep" name="departamento" type="text" class="form-input"
+                                        placeholder="Ej: Cusco" value="Cusco" required maxlength="60">
+                                </div>
+                            </div>
+                        </fieldset>
 
-            <!-- PASO 3 -->
-            <div class="max-w-3xl mx-auto scroll-reveal mt-8">
-                <div class="glass-card p-10 border-t-4 border-t-[#F472B6] relative overflow-hidden text-center">
-                    <div class="absolute top-0 left-0 w-40 h-40 bg-[#F472B6]/10 rounded-full blur-3xl"></div>
-                    <span class="inline-block px-4 py-1 rounded-full bg-[#F472B6]/10 border border-[#F472B6]/20 text-xs font-bold tracking-widest text-[#F472B6] mb-3 relative z-10">PASO 3</span>
-                    <h3 class="text-2xl font-bold font-oswald uppercase tracking-tight relative z-10">Confirma tu inscripción</h3>
-                    <p class="text-white/80 mt-4 text-lg relative z-10">Confirma tu inscripción el día que recojas tu kit, el 06 y 07 de Agosto. <strong>Recuerda llevar tu copia de DNI y los Anexos impresos, debidamente completados y firmados.</strong></p>
-                    <div class="mt-6 inline-block bg-black/30 px-6 py-4 rounded-xl border border-white/5 relative z-10">
-                        <strong class="block text-[#F472B6] mb-1">Proyecto Protalento</strong>
-                        <span class="text-sm text-white/70 flex items-center justify-center gap-2"><iconify-icon icon="lucide:map-pin" class="text-[#F472B6] text-lg"></iconify-icon> Casa de la Cultura (Calle Suárez, San Jerónimo)</span>
+                        <!-- Datos del Apoderado (menores) -->
+                        <fieldset id="fs-apoderado"
+                            class="mb-8 p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] hidden fade-in">
+                            <legend
+                                class="text-sm font-semibold text-race-blue-light uppercase tracking-wider mb-5 flex items-center gap-2">
+                                <iconify-icon icon="lucide:users" width="16"></iconify-icon> Datos del Apoderado
+                                (Obligatorio para menores)
+                            </legend>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="form-label" for="in-ap-nom">Nombre y Apellido del
+                                        Padre/Apoderado *</label>
+                                    <input id="in-ap-nom" name="apoderado_nombres" type="text" class="form-input"
+                                        placeholder="Ej: PÉREZ, Luis" maxlength="120">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="in-ap-dni">DNI del Apoderado *</label>
+                                    <input id="in-ap-dni" name="apoderado_dni" type="text" class="form-input"
+                                        placeholder="00000000" maxlength="8" pattern="[0-9]{8}" inputmode="numeric"
+                                        data-only-digits>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="in-ap-cel">Celular del Apoderado *</label>
+                                    <input id="in-ap-cel" name="apoderado_celular" type="tel" class="form-input"
+                                        placeholder="984000000" maxlength="9" pattern="9[0-9]{8}" inputmode="numeric"
+                                        data-only-digits>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Categoría -->
+                        <fieldset class="mb-8">
+                            <legend
+                                class="text-sm font-semibold text-race-green uppercase tracking-wider mb-5 flex items-center gap-2">
+                                <iconify-icon icon="lucide:tag" width="16"></iconify-icon> Selección de Categoría *
+                            </legend>
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <label
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-blue-light/30 transition-all">
+                                    <input type="radio" name="categoria" value="juvenil-varon"
+                                        class="w-4 h-4 accent-blue-500" required>
+                                    <div>
+                                        <div class="text-sm font-semibold">Juvenil Varón</div>
+                                        <div class="text-xs text-white/40">14 a 17 años</div>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-blue-light/30 transition-all">
+                                    <input type="radio" name="categoria" value="juvenil-mujer"
+                                        class="w-4 h-4 accent-blue-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Juvenil Mujer</div>
+                                        <div class="text-xs text-white/40">14 a 17 años</div>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-green/30 transition-all">
+                                    <input type="radio" name="categoria" value="libre-varon"
+                                        class="w-4 h-4 accent-green-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Libre Varón</div>
+                                        <div class="text-xs text-white/40">18 a 39 años</div>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-green/30 transition-all">
+                                    <input type="radio" name="categoria" value="libre-mujer"
+                                        class="w-4 h-4 accent-green-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Libre Mujer</div>
+                                        <div class="text-xs text-white/40">18 a 39 años</div>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-yellow/30 transition-all">
+                                    <input type="radio" name="categoria" value="master-varon"
+                                        class="w-4 h-4 accent-yellow-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Máster Varón</div>
+                                        <div class="text-xs text-white/40">40 a más años</div>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-3 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] cursor-pointer hover:border-race-yellow/30 transition-all">
+                                    <input type="radio" name="categoria" value="master-mujer"
+                                        class="w-4 h-4 accent-yellow-500">
+                                    <div>
+                                        <div class="text-sm font-semibold">Máster Mujer</div>
+                                        <div class="text-xs text-white/40">40 a más años</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Términos y Condiciones -->
+                        <fieldset class="mb-8">
+                            <legend
+                                class="text-sm font-semibold text-orange-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <iconify-icon icon="lucide:scroll-text" width="16"></iconify-icon> Términos y Condiciones
+                            </legend>
+                            <div
+                                class="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.06] max-h-40 overflow-y-auto text-white/50 text-xs leading-relaxed space-y-3">
+                                <p>Al enviar mi inscripción, declaro que participo de forma voluntaria en la Carrera 7K "Phaway Phu´spu", organizada por la Municipalidad Distrital de San Jerónimo, y que conozco y acepto en su totalidad las bases, el reglamento y las disposiciones establecidas por la comisión organizadora para el desarrollo de esta competencia.</p>
+                                <p>Declaro conocer que este evento exige preparación y esfuerzo físico, y manifiesto encontrarme apto(a) y en condiciones adecuadas para participar, según la opción de salud que seleccione en la sección "Opciones de Salud" de este formulario. El requisito de presentar impresos y firmados los Anexos N.° 02 y N.° 03 el día de la entrega de kits dependerá de dicha selección.</p>
+                                <p>Declaro que mi participación es libre y voluntaria, y asumo bajo mi responsabilidad los riesgos inherentes a esta actividad física. En consecuencia, libero de responsabilidad civil, penal, administrativa, médica o de cualquier otra índole a la Municipalidad Distrital de San Jerónimo, a la comisión organizadora, auspiciadores y colaboradores, por cualquier lesión, accidente, daño a mi salud o pérdida de mis pertenencias que pudiera ocurrir durante el desarrollo del evento, salvo que dicho daño sea consecuencia directa de negligencia comprobada por parte de la organización, conforme a la normativa vigente.</p>
+                                <p>Reconozco que soy responsable de mis pertenencias personales e implementos deportivos utilizados durante la competencia, y que la inscripción es gratuita, personal, intransferible y no reembolsable. Me comprometo a cumplir el reglamento, las disposiciones de seguridad y las indicaciones del personal organizador y de los jueces, aceptando mi posible descalificación en caso de incumplimiento, incluyendo la evasión de puntos de control o del recorrido establecido.</p>
+                                <p>Autorizo a la comisión organizadora el uso de mi nombre, fotografías y videos captados durante el evento, con fines de difusión y promoción de la presente y futuras actividades deportivas.</p>
+                                <p>Si mi participación corresponde a la categoría Juvenil (14 a 17 años), declaro contar con la autorización expresa de mi padre, madre o apoderado para inscribirme y participar, quien asume la responsabilidad de dicha autorización conforme a lo señalado en las bases del evento.</p>
+                                <p>Declaro que los datos consignados en este formulario son verídicos, autorizando a la comisión organizadora a realizar las verificaciones que considere necesarias. En caso de comprobarse falsedad en la información proporcionada, especialmente respecto a mi estado de salud o mi edad, asumiré las responsabilidades y consecuencias que de ello se deriven, incluyendo la descalificación o anulación de mi inscripción.</p>
+                            </div>
+                            <div class="mt-6 mb-2">
+                                <p class="text-sm text-white mb-3 font-bold">Opciones de Salud (Seleccione una) <span
+                                        class="text-race-red">*</span></p>
+                                <div class="space-y-3">
+                                    <label class="flex items-start gap-3 cursor-pointer group">
+                                        <input type="radio" name="salud" value="ok" class="mt-1 accent-yellow-500"
+                                            required>
+                                        <span class="text-sm text-white/70 group-hover:text-white transition-colors">Me
+                                            encuentro en <strong>buen estado de salud</strong> y apto para participar.
+                                            (No requiero traer los anexos físicos, solo mi DNI).</span>
+                                    </label>
+                                    <label class="flex items-start gap-3 cursor-pointer group">
+                                        <input type="radio" name="salud" value="anexos" class="mt-1 accent-yellow-500"
+                                            required>
+                                        <span
+                                            class="text-sm text-white/70 group-hover:text-white transition-colors">Tengo
+                                            dudas sobre mi salud o condiciones médicas. (<strong>Deberé traer</strong>
+                                            mis anexos impresos y firmados).</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="flex items-start gap-3 mt-4 cursor-pointer">
+                                <input type="checkbox" name="accept_terms" id="acceptTerms"
+                                    class="w-4 h-4 mt-0.5 accent-yellow-500" required>
+                                <span class="text-sm text-white/60">Acepto los términos, condiciones, reglamento de la carrera, y libero de toda responsabilidad a la Municipalidad. (<strong
+                                        class="text-white/80">Obligatorio</strong>)</span>
+                            </label>
+                        </fieldset>
+
+                        <button type="submit" id="submitBtn"
+                            class="btn-primary w-full justify-center text-lg py-4 opacity-50 cursor-not-allowed"
+                            disabled>
+                            <iconify-icon icon="lucide:send" width="20"></iconify-icon>
+                            Enviar Inscripción
+                        </button>
+                        <p class="text-center text-white/30 text-xs mt-4">
+                            Nota: El requisito de documentos dependerá de la opción de salud seleccionada.
+                        </p>
+                    </form>
+
+                    <!-- Mensaje de Éxito (Oculto por defecto) -->
+                    <div id="registrationSuccess"
+                        class="hidden flex flex-col items-center justify-center py-12 text-center fade-in">
+                        <div class="w-20 h-20 bg-race-green/20 rounded-full flex items-center justify-center mb-6">
+                            <iconify-icon icon="lucide:check-circle" class="text-race-green text-5xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 text-white">¡Inscripción Exitosa!</h3>
+                        <p class="text-white/70 mb-8 text-lg max-w-md mx-auto">
+                            Tu inscripción ha sido registrada correctamente. Por favor, confirma presencialmente en las
+                            oficinas con tu documentación.
+                        </p>
+                        <button type="button" onclick="window.location.reload()"
+                            class="bg-race-yellow text-race-dark px-8 py-3 rounded-full font-bold hover:bg-white transition-colors uppercase tracking-wide">
+                            Entendido
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Requisitos Separados (Movidos debajo del formulario) -->
+        <div class="max-w-3xl mx-auto scroll-reveal">
+            <div class="glass-card p-10 border-t-4 border-t-[#4ADE80] relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-[#4ADE80]/10 rounded-full blur-3xl"></div>
+                <div class="text-center mb-8 relative z-10">
+                    <span
+                        class="inline-block px-4 py-1 rounded-full bg-[#4ADE80]/10 border border-[#4ADE80]/20 text-xs font-bold tracking-widest text-[#4ADE80] mb-3">PASO
+                        2</span>
+                    <h3
+                        class="text-2xl font-bold font-oswald uppercase tracking-tight flex items-center justify-center gap-3">
+                        Prepara tus Documentos</h3>
+                    <p class="text-white/60 text-sm mt-3">Si marcaste la opción de llevar anexos, descárgalos, imprímelos y llénalos con letra clara.
+                    </p>
+                </div>
+
+                <div class="bg-black/30 rounded-xl p-6 border border-white/5 mb-8 relative z-10">
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4 text-white/90">
+                            <iconify-icon icon="lucide:check-circle" width="24"
+                                style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            <span class="text-lg">Copia simple del <strong>DNI</strong></span>
+                        </li>
+                        <li class="flex items-start gap-4 text-white/90">
+                            <iconify-icon icon="lucide:check-circle" width="24"
+                                style="color: #4ADE80; margin-top: 2px; flex-shrink: 0;"></iconify-icon>
+                            <div>
+                                <strong class="text-lg">Formato Único de Inscripción</strong> (Impreso y llenado) que
+                                incluye:
+                                <ul class="pl-2 mt-4 space-y-3 text-white/70">
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-[#4ADE80]/70"></div> Ficha de Inscripción
+                                        (Anexo 01)
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-[#4ADE80]/70"></div> Declaración Jurada de
+                                        Salud (Anexo 02)
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-[#4ADE80]/70"></div> Deslinde de
+                                        Responsabilidades (Anexo 03)
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="assets/docs/ficha-inscripcion.pdf?v=3" target="_blank"
+                    class="relative z-10 w-full bg-white/5 hover:bg-[#4ADE80] hover:text-[#111] text-white font-bold text-lg py-5 rounded-xl flex justify-center items-center gap-3 transition-colors border border-[#4ADE80]/30 uppercase tracking-wide">
+                    <iconify-icon icon="lucide:download" width="24"></iconify-icon> Descargar Anexos en PDF
+                </a>
+            </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="max-w-3xl mx-auto scroll-reveal mt-8">
+            <div class="glass-card p-10 border-t-4 border-t-[#F472B6] relative overflow-hidden text-center">
+                <div class="absolute top-0 left-0 w-40 h-40 bg-[#F472B6]/10 rounded-full blur-3xl"></div>
+                <span
+                    class="inline-block px-4 py-1 rounded-full bg-[#F472B6]/10 border border-[#F472B6]/20 text-xs font-bold tracking-widest text-[#F472B6] mb-3 relative z-10">PASO
+                    3</span>
+                <h3 class="text-2xl font-bold font-oswald uppercase tracking-tight relative z-10">Confirma tu
+                    inscripción</h3>
+                <p class="text-white/80 mt-4 text-lg relative z-10">Confirma tu inscripción el día que recojas tu kit,
+                    el 06 y 07 de Agosto. <strong>Recuerda llevar tu copia de DNI físico (y los Anexos impresos y firmados, solo si indicaste que los llevarías en el formulario).</strong></p>
+                <div class="mt-6 inline-block bg-black/30 px-6 py-4 rounded-xl border border-white/5 relative z-10">
+                    <strong class="block text-[#F472B6] mb-1">Proyecto Protalento</strong>
+                    <span class="text-sm text-white/70 flex items-center justify-center gap-2"><iconify-icon
+                            icon="lucide:map-pin" class="text-[#F472B6] text-lg"></iconify-icon> Casa de la Cultura
+                        (Calle Suárez, San Jerónimo)</span>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -881,7 +1038,8 @@
         </div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Fechas Importantes</span>
+                <span class="inline-block text-xs font-semibold uppercase tracking-widest text-race-yellow mb-4">Fechas
+                    Importantes</span>
                 <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Cronogramas del <span
                         class="gradient-text">Evento</span></h2>
             </div>
@@ -890,23 +1048,28 @@
             <div class="flex items-center justify-center gap-4 mb-14 scroll-reveal">
                 <div class="h-[2px] flex-1 bg-gradient-to-r from-transparent to-race-yellow/50 max-w-[80px]"></div>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-race-yellow/10 flex items-center justify-center border border-race-yellow/30 shadow-[0_0_15px_rgba(240,200,79,0.2)]">
+                    <div
+                        class="w-12 h-12 rounded-full bg-race-yellow/10 flex items-center justify-center border border-race-yellow/30 shadow-[0_0_15px_rgba(240,200,79,0.2)]">
                         <span class="text-race-yellow font-bold text-xl">1</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-white uppercase font-oswald">Fase de <span class="text-race-yellow">Inscripción</span></h3>
+                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-white uppercase font-oswald">Fase de
+                        <span class="text-race-yellow">Inscripción</span></h3>
                 </div>
                 <div class="h-[2px] flex-1 bg-gradient-to-l from-transparent to-race-yellow/50 max-w-[80px]"></div>
             </div>
-            
+
             <div class="timeline scroll-reveal mb-24">
                 <!-- ITEM 1: Inscripciones -->
                 <div class="timeline-item">
                     <div class="timeline-content text-col">
                         <div class="timeline-title">Periodo de Inscripción</div>
                         <div class="timeline-desc">
-                            <span class="block mb-1"><strong>Inicio:</strong> 08 de julio 2026 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Cierre:</strong> 05 de agosto 2026</span>
-                            <span class="block mb-1"><strong>Horarios:</strong> 08:00 a 13:00 hrs y 14:00 a 17:00 hrs</span>
-                            <span class="block"><strong>Lugar:</strong> Proyecto Protalento, Casa de la Cultura (Calle Suárez)</span>
+                            <span class="block mb-1"><strong>Inicio:</strong> 08 de julio 2026 &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <strong>Cierre:</strong> 05 de agosto 2026</span>
+                            <span class="block mb-1"><strong>Horarios:</strong> 08:00 a 13:00 hrs y 14:00 a 17:00
+                                hrs</span>
+                            <span class="block"><strong>Lugar:</strong> Proyecto Protalento, Casa de la Cultura (Calle
+                                Suárez)</span>
                         </div>
                     </div>
                     <div class="dot-col">
@@ -925,15 +1088,19 @@
                         <div class="timeline-time-sub">de Agosto</div>
                     </div>
                     <div class="dot-col">
-                        <div class="timeline-dot" style="background: #F472B6;"><iconify-icon icon="lucide:package"></iconify-icon></div>
+                        <div class="timeline-dot" style="background: #F472B6;"><iconify-icon
+                                icon="lucide:package"></iconify-icon></div>
                     </div>
                     <div class="timeline-content text-col">
                         <div class="timeline-title">Entrega de Kits Oficiales</div>
                         <div class="timeline-desc">
                             <span class="block mb-1"><strong>Lugar:</strong> Plaza de San Jerónimo</span>
-                            <span class="block mb-1"><strong>Horarios:</strong> 9:00 a.m. a 12:00 p.m. y 2:00 p.m. a 5:00 p.m.</span>
-                            <span class="block mt-2 text-race-yellow text-sm font-bold"><iconify-icon icon="lucide:alert-triangle" class="inline"></iconify-icon> Nota para Menores de Edad:</span>
-                            <span class="block text-xs">Obligatorio presentar DNI y anexos firmados por apoderado.</span>
+                            <span class="block mb-1"><strong>Horarios:</strong> 9:00 a.m. a 12:00 p.m. y 2:00 p.m. a
+                                5:00 p.m.</span>
+                            <span class="block mt-2 text-race-yellow text-sm font-bold"><iconify-icon
+                                    icon="lucide:alert-triangle" class="inline"></iconify-icon> Nota para Menores de
+                                Edad:</span>
+                            <span class="block text-xs">Obligatorio presentar DNI del menor y apoderado, junto con los anexos firmados.</span>
                         </div>
                     </div>
                 </div>
@@ -943,10 +1110,12 @@
             <div class="flex items-center justify-center gap-4 mb-14 mt-16 scroll-reveal">
                 <div class="h-[2px] flex-1 bg-gradient-to-r from-transparent to-[#4ADE80]/50 max-w-[80px]"></div>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-[#4ADE80]/10 flex items-center justify-center border border-[#4ADE80]/30 shadow-[0_0_15px_rgba(74,222,128,0.2)]">
+                    <div
+                        class="w-12 h-12 rounded-full bg-[#4ADE80]/10 flex items-center justify-center border border-[#4ADE80]/30 shadow-[0_0_15px_rgba(74,222,128,0.2)]">
                         <span class="text-[#4ADE80] font-bold text-xl">2</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-white uppercase font-oswald">Día de la <span class="text-[#4ADE80]">Carrera</span></h3>
+                    <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-white uppercase font-oswald">Día de la
+                        <span class="text-[#4ADE80]">Carrera</span></h3>
                 </div>
                 <div class="h-[2px] flex-1 bg-gradient-to-l from-transparent to-[#4ADE80]/50 max-w-[80px]"></div>
             </div>
@@ -957,7 +1126,8 @@
                 <div class="timeline-item">
                     <div class="timeline-content text-col">
                         <div class="timeline-title">Concentración y registro</div>
-                        <div class="timeline-desc">Estadio Cajonahuaylla. Registro y organización de participantes.</div>
+                        <div class="timeline-desc">Estadio Cajonahuaylla. Registro y organización de participantes.
+                        </div>
                     </div>
                     <div class="dot-col">
                         <div class="timeline-dot"><iconify-icon icon="lucide:user-check"></iconify-icon></div>
@@ -1009,7 +1179,8 @@
                     </div>
                     <div class="timeline-content text-col">
                         <div class="timeline-title">Estaciones de hidratación</div>
-                        <div class="timeline-desc">Se contará con puntos de hidratación ubicados en:<br>• Km 3+400 — Universidad Andina.<br>• Km 7+000 — cerca de la Plaza de Armas.</div>
+                        <div class="timeline-desc">Se contará con puntos de hidratación ubicados en:<br>• Km 3+400 —
+                            Universidad Andina.<br>• Km 7+000 — cerca de la Plaza de Armas.</div>
                     </div>
                 </div>
 
@@ -1017,7 +1188,8 @@
                 <div class="timeline-item">
                     <div class="timeline-content text-col">
                         <div class="timeline-title">Llegada y ceremonia de premiación</div>
-                        <div class="timeline-desc">Plaza de Armas de San Jerónimo. Actividades de cierre y premiación a los participantes destacados.</div>
+                        <div class="timeline-desc">Plaza de Armas de San Jerónimo. Actividades de cierre y premiación a
+                            los participantes destacados.</div>
                     </div>
                     <div class="dot-col">
                         <div class="timeline-dot"><iconify-icon icon="lucide:award"></iconify-icon></div>
@@ -1167,14 +1339,21 @@
     <section class="sponsors-section">
         <div class="sponsors-group">
             <p class="sponsors-label">Organizan</p>
-            <div class="sponsors-row">
+            <!-- Organizador Principal -->
+            <div class="sponsors-row" style="margin-bottom: 16px;">
                 <img src="assets/images/Copia de MDSJ BLANCO.png" alt="Municipalidad Distrital de San Jerónimo"
-                    class="sponsor-logo logo-organiza">
-                <div class="sponsors-divider-vertical"></div>
+                    class="sponsor-logo logo-organiza" style="height: 130px !important; max-width: 400px !important;">
+            </div>
+
+            <!-- Co-Organizadores -->
+            <div class="sponsors-row">
                 <img src="assets/images/LOGO 7K BLANCO.png" alt="Logo Carrera 7K" class="sponsor-logo logo-carrera">
                 <div class="sponsors-divider-vertical"></div>
-                <img src="assets/images/LOGO GESTIÓN 2023 - ESCUDO DEL CUSCO M.png"
-                    alt="Gestión Cusco - Escudo del Cusco" class="sponsor-logo logo-cusco">
+                <img src="assets/images/logo ADAFOSAJ.png" alt="ADAFOSAJ" class="sponsor-logo logo-organiza keep-color"
+                    style="height: 145px !important; max-width: 400px !important;">
+                <div class="sponsors-divider-vertical"></div>
+                <img src="assets/images/Sonqollay logo.PNG" alt="Sonqollay" class="sponsor-logo logo-organiza"
+                    style="height: 145px !important; max-width: 400px !important;">
             </div>
         </div>
 
@@ -1183,8 +1362,12 @@
         <div class="sponsors-group">
             <p class="sponsors-label">Colaboran</p>
             <div class="sponsors-row">
-                <img src="assets/images/logo protalento.png" alt="Protalento" class="sponsor-logo logo-apoyan">
-                <img src="assets/images/Sonqollay logo.PNG" alt="Sonqollay" class="sponsor-logo logo-apoyan">
+                <img src="assets/images/LOGO GESTIÓN 2023 - ESCUDO DEL CUSCO M.png" alt="Gestión Cusco"
+                    class="sponsor-logo logo-apoyan" style="height: 200px !important; max-width: 450px !important;">
+                <img src="assets/images/logo protalento.png" alt="Protalento" class="sponsor-logo logo-apoyan"
+                    style="height: 180px !important; max-width: 400px !important;">
+                <img src="assets/images/logo beins sport.png" alt="Beins Sport" class="sponsor-logo logo-apoyan"
+                    style="height: 90px !important; max-width: 250px !important;">
             </div>
         </div>
     </section>
@@ -1521,11 +1704,11 @@
         L.polylineDecorator(routeLine, {
             patterns: [
                 {
-                    offset: 50, 
+                    offset: 50,
                     repeat: 120, // Distancia entre flechas
                     symbol: L.Symbol.arrowHead({
-                        pixelSize: 14, 
-                        polygon: true, 
+                        pixelSize: 14,
+                        polygon: true,
                         pathOptions: { fillOpacity: 1, color: '#FFFFFF', weight: 2, fillColor: '#D91A2A' }
                     })
                 }
@@ -1674,11 +1857,11 @@
         const expandBtn = document.getElementById('expandMapBtn');
         const closeBtn = document.getElementById('closeMapBtn');
         const mapContainerEl = document.querySelector('.map-container');
-        
+
         function toggleMapFullscreen() {
             mapContainerEl.classList.toggle('is-fullscreen');
             document.body.classList.toggle('map-active');
-            
+
             if (mapContainerEl.classList.contains('is-fullscreen')) {
                 expandBtn.classList.add('hidden');
                 closeBtn.classList.remove('hidden');
@@ -1698,7 +1881,7 @@
             }, 300);
         }
 
-        if(expandBtn && closeBtn && mapContainerEl) {
+        if (expandBtn && closeBtn && mapContainerEl) {
             expandBtn.addEventListener('click', toggleMapFullscreen);
             closeBtn.addEventListener('click', toggleMapFullscreen);
         }

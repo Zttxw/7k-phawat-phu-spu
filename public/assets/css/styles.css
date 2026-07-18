@@ -1214,6 +1214,10 @@ h6,
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+.sponsor-logo.keep-color {
+    filter: none;
+}
+
 .logo-cusco {
     height: 178px !important;
     max-width: 330px !important;
