@@ -132,6 +132,7 @@
         'categorias': ['categorias'],
         'recorrido': ['recorrido', 'seguridad'],
         'cronograma': ['cronograma'],
+        'kits': ['kits'],
         'inscripcion': ['inscripcion', 'bases']
     };
 
