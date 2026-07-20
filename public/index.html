@@ -1410,8 +1410,24 @@
                 icon="fa6-brands:tiktok"></iconify-icon></a>
     </div>
 
+    <!-- MODAL DE SOLIDARIDAD -->
+    <div id="donation-modal" class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-[#111] border border-race-yellow/30 p-8 rounded-2xl max-w-md mx-4 text-center shadow-[0_0_40px_rgba(240,200,79,0.15)] transform scale-95 transition-transform duration-300 donation-modal-content">
+            <div class="w-16 h-16 mx-auto bg-race-yellow/10 text-race-yellow rounded-full flex items-center justify-center mb-6">
+                <iconify-icon icon="lucide:heart-handshake" width="32"></iconify-icon>
+            </div>
+            <h3 class="text-2xl font-bold font-oswald uppercase tracking-tight text-white mb-4">Campaña de <span class="text-race-yellow">Solidaridad</span></h3>
+            <p class="text-white/80 leading-relaxed mb-8 text-sm">
+                Te invitamos a sumarte trayendo alimentos no perecibles. Lo recaudado será destinado a ayudar a las personas de la tercera edad de nuestra comunidad.
+            </p>
+            <button id="close-donation-modal" class="btn-primary w-full py-3 uppercase font-bold tracking-widest text-sm rounded-lg hover:scale-[1.02] transition-transform">
+                ¡Me uno a la causa!
+            </button>
+        </div>
+    </div>
+
     <!-- Scripts propios (defer para no bloquear parseo) -->
-    <script src="assets/js/main.js?v=3"></script>
+    <script src="assets/js/main.js?v=4"></script>
     <script src="assets/js/form.js?v=6" defer></script>
 
     <script>

@@ -164,6 +164,12 @@
         setTimeout(() => {
             window.dispatchEvent(new Event('resize'));
         }, 50);
+
+        if (targetId === 'inscripcion') {
+            if (typeof window.showDonationModal === 'function') {
+                setTimeout(window.showDonationModal, 500);
+            }
+        }
     }
 
     navLinks.forEach(link => {
@@ -207,6 +213,12 @@
             setTimeout(() => {
                 window.dispatchEvent(new Event('resize'));
             }, 50);
+
+            if (targetId === 'inscripcion') {
+                if (typeof window.showDonationModal === 'function') {
+                    setTimeout(window.showDonationModal, 500);
+                }
+            }
         });
     });
 
@@ -239,4 +251,48 @@
         clearTimeout(toast._t);
         toast._t = setTimeout(() => toast.classList.remove('show'), 5000);
     };
+
+    // -------------------------------------------------------------------------
+    // POP-UP DONACIÓN
+    // -------------------------------------------------------------------------
+    const donationModal = document.getElementById('donation-modal');
+    const closeDonationBtn = document.getElementById('close-donation-modal');
+    
+    window.showDonationModal = function() {
+        if (!donationModal) return;
+        donationModal.classList.remove('opacity-0', 'pointer-events-none');
+        const content = donationModal.querySelector('.donation-modal-content');
+        if(content) {
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+    };
+
+    function hideDonationModal() {
+        if (!donationModal) return;
+        donationModal.classList.add('opacity-0', 'pointer-events-none');
+        const content = donationModal.querySelector('.donation-modal-content');
+        if(content) {
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
+    }
+
+    if (closeDonationBtn) {
+        closeDonationBtn.addEventListener('click', hideDonationModal);
+    }
+    
+    if (donationModal) {
+        donationModal.addEventListener('click', (e) => {
+            if (e.target === donationModal) hideDonationModal();
+        });
+    }
+
+    // Mostrar modal en carga inicial (con pequeño delay)
+    if (!sessionStorage.getItem('donationShownInit')) {
+        setTimeout(() => {
+            window.showDonationModal();
+            sessionStorage.setItem('donationShownInit', 'true');
+        }, 1500);
+    }
 })();
