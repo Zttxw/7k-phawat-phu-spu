@@ -171,8 +171,9 @@ function excel_append_row(array $row): array {
 
         // Verificar si la cabecera 'Talla Polo' existe en la última columna, si no, crearla para retrocompatibilidad
         $colTalla = chr(65 + count(EXCEL_HEADERS) - 1);
-        if ((string)$sheet->getCell($colTalla . '1')->getValue() !== end(EXCEL_HEADERS)) {
-            $sheet->setCellValue($colTalla . '1', end(EXCEL_HEADERS));
+        $headerName = EXCEL_HEADERS[count(EXCEL_HEADERS) - 1];
+        if ((string)$sheet->getCell($colTalla . '1')->getValue() !== $headerName) {
+            $sheet->setCellValue($colTalla . '1', $headerName);
             $sheet->getStyle($colTalla . '1')->applyFromArray([
                 'font'      => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
                 'fill'      => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1E40AF']],
