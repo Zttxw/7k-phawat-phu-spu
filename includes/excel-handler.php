@@ -41,6 +41,7 @@ const EXCEL_HEADERS = [
     'Acepta DJ',
     'Estado',
     'IP',
+    'Talla Polo',
 ];
 
 /**
@@ -156,6 +157,7 @@ function excel_append_row(array $row): array {
             $row['acepta_dj'],
             $row['estado'],
             $row['ip'],
+            $row['talla'],
         ];
 
         foreach ($ordered as $i => $val) {
@@ -165,6 +167,19 @@ function excel_append_row(array $row): array {
                 (string)$val,
                 \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING
             );
+        }
+
+        // Verificar si la cabecera 'Talla Polo' existe en la última columna, si no, crearla para retrocompatibilidad
+        $colTalla = chr(65 + count(EXCEL_HEADERS) - 1);
+        if ((string)$sheet->getCell($colTalla . '1')->getValue() !== end(EXCEL_HEADERS)) {
+            $sheet->setCellValue($colTalla . '1', end(EXCEL_HEADERS));
+            $sheet->getStyle($colTalla . '1')->applyFromArray([
+                'font'      => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
+                'fill'      => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => '1E40AF']],
+                'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER],
+                'borders'   => ['allBorders' => ['borderStyle' => Border::BORDER_THIN]],
+            ]);
+            $sheet->getColumnDimension($colTalla)->setAutoSize(true);
         }
 
         (new XlsxWriter($ss))->save(EXCEL_FILE);

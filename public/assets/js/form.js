@@ -92,6 +92,7 @@
         check('provincia', validators.texto(fd.get('provincia') || ''), 'Provincia requerida.');
         check('departamento', validators.texto(fd.get('departamento') || ''),
               'Departamento requerido.');
+        check('talla', !!fd.get('talla'), 'Seleccione su talla de polo.');
         check('categoria', !!fd.get('categoria'), 'Seleccione una categoría.');
         check('salud', !!fd.get('salud'), 'Seleccione una opción de salud.');
 

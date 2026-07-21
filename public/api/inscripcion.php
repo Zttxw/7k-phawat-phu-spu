@@ -89,6 +89,7 @@ $in = [
     'apoderado_dni'     => clean_string($_POST['apoderado_dni'] ?? '', 8),
     'apoderado_celular' => clean_string($_POST['apoderado_celular'] ?? '', 9),
     'salud'             => clean_string($_POST['salud'] ?? '', 10),
+    'talla'             => clean_string($_POST['talla'] ?? '', 10),
     'accept_terms'      => ($_POST['accept_terms'] ?? '') === 'on',
 ];
 
@@ -135,6 +136,11 @@ if (!$in['accept_terms']) {
 
 if ($in['salud'] !== 'ok' && $in['salud'] !== 'anexos') {
     $errors['salud'] = 'Debe seleccionar una opción de salud válida.';
+}
+
+$valid_tallas = ['14', '16', 'S', 'M', 'L', 'XL'];
+if (!in_array($in['talla'], $valid_tallas, true)) {
+    $errors['talla'] = 'Debe seleccionar una talla válida.';
 }
 
 // Menores: apoderado obligatorio
@@ -196,6 +202,7 @@ try {
         'acepta_dj'         => $in['accept_terms'] ? 'SI (' . (($in['salud'] === 'ok') ? 'Buena Salud, No Anexos' : 'Presentará Anexos') . ')' : 'NO',
         'estado'            => 'Pre-inscrito',
         'ip'                => client_ip(),
+        'talla'             => $in['talla'],
     ];
 
     $result = excel_append_row($row);
